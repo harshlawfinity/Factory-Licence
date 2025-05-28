@@ -3,12 +3,13 @@ import f1 from "../assets/f1.webp";
 import f2 from "../assets/f2.webp";
 import f3 from "../assets/f3.webp";
 import ContactForm from "./ContactForm";
+import hero from '../assets/hero2.gif';
 
 const bgImages = [f1, f2, f3];
 
 const HeroSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [showMobileForm, setShowMobileForm] = useState(false); // 👈 Popup state
+  const [showPopup, setShowPopup] = useState(false); // 👈 controls popup for all devices
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -18,28 +19,17 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <div className="relative w-full h-screen overflow-hidden">
-      {/* Background */}
-      <div
-        className="absolute top-0 left-0 h-full w-[300%] flex transition-transform duration-1000 ease-in-out"
-        style={{ transform: `translateX(-${currentIndex * 100}vw)` }}
-      >
-        {bgImages.map((img, index) => (
-          <div
-            key={index}
-            className="w-screen h-full bg-cover bg-center"
-            style={{ backgroundImage: `url(${img})` }}
-          />
-        ))}
-      </div>
+    <div className="relative w-full h-screen overflow-hidden bg-[#7A3EF2]">
 
-      {/* Overlay */}
+      {/* Overlay content */}
       <div className="absolute inset-0 flex items-center justify-center px-4 sm:px-6">
         <div className="max-w-7xl mx-auto w-full flex flex-col lg:flex-row justify-between items-center gap-8">
-          
+          <div className="lg:hidden block  ">
+            <img src={hero} alt="Hero" className="rounded-full h-40 mt-20" />
+          </div>
           {/* Left Text */}
-          <div className="text-white bg-black/80 p-6 sm:p-8 rounded-lg w-full lg:max-w-3xl">
-            <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold capitalize leading-tight mb-4">
+          <div className="text-white w-full lg:max-w-3xl">
+            <h1 className="text-2xl sm:text-4xl md:text-5xl font-semibold capitalize leading-tight mb-4">
               From paperwork to permit <br />
               <span className="text-white">factory license <br /> done right</span>
             </h1>
@@ -48,9 +38,8 @@ const HeroSection = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              {/* 👇 Show form in popup for mobile */}
               <button
-                onClick={() => setShowMobileForm(true)}
+                onClick={() => setShowPopup(true)} // ✅ open popup
                 className="bg-white text-[#7A3EF2] font-semibold px-6 py-3 rounded-full hover:bg-gray-200 transition"
               >
                 Get a Free Quote
@@ -62,24 +51,24 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* Desktop form only */}
-          <div className="hidden lg:block">
-            <ContactForm />
+          {/* Right image */}
+          <div className="hidden lg:block  ">
+            <img src={hero} alt="Hero" className="rounded-full h-96" />
           </div>
         </div>
       </div>
 
-      {/* 👇 Mobile popup form */}
-      {showMobileForm && (
-        <div className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center lg:hidden px-4">
+      {/* 👇 Popup Form for all devices */}
+      {showPopup && (
+        <div className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center px-4">
           <div className="bg-gray-50 p-6 rounded-lg max-w-md w-full relative">
             <button
-              onClick={() => setShowMobileForm(false)}
-              className="absolute top-2 right-3 text-gray-500 text-4xl font- "
+              onClick={() => setShowPopup(false)}
+              className="absolute top-2 right-3 text-gray-500 text-4xl"
             >
               ×
             </button>
-            <ContactForm />
+            <ContactForm  />
           </div>
         </div>
       )}

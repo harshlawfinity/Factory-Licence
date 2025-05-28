@@ -37,7 +37,7 @@ const FactoryLicenseGrid = () => {
   return (
     <div className="py-16 px-4 bg-white">
       <div className="max-w-7xl mx-auto text-center">
-        <h2 className="text-4xl font-semibold text-gray-900 mb-10">
+        <h2 className="md:text-4xl text-3xl font-semibold text-gray-900 mb-10">
           Factory License & Compliance Services
         </h2>
         <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
