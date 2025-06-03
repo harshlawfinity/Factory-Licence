@@ -1,19 +1,23 @@
+import zero from '../assets/zero.webp'
+import support from '../assets/support.webp'
+import management from '../assets/management.webp'
 export default function AssistanceSection() {
+
   const features = [
     {
-      title: "Sample Content",
-      description: "Create pixel perfect master creatives using a range of premium design tools",
-      image: "/sample-content.png", // Replace with your actual path
+      title: "Zero-Error Documentation",
+      description: "100% accuracy in paperwork to avoid delays, rejections, or penalties.",
+      image: zero // Replace with your actual path
     },
     {
-      title: "Creative strategy",
-      description: "We develop or adapt a creative strategy for paid & owned media.",
-      image: "/creative-strategy.png", // Replace with your actual path
+      title: "Ongoing Compliance Management",
+      description: "We don’t stop at licences — we help you stay compliant year-round.",
+      image: management, // Replace with your actual path
     },
     {
       title: "Support 24/7",
       description: "We help diagnose processes in the company. We provide recommendations on process optimization.",
-      image: "/support.png", // Replace with your actual path
+      image: support, // Replace with your actual path
     },
   ];
 
@@ -30,15 +34,11 @@ export default function AssistanceSection() {
           >
             <img src={feature.image} alt={feature.title} className="w-24 h-24 mb-4" />
             <h3 className="text-xl font-semibold text-gray-900 mb-2">{feature.title}</h3>
-            <p className="text-gray-500 text-sm">{feature.description}</p>
+            <p className="text-gray-500 text-sm ">{feature.description}</p>
           </div>
         ))}
       </div>
-      <div className="mt-10">
-        <button className="bg-purple-600 text-white px-6 py-2 rounded-full font-semibold hover:bg-purple-700 transition">
-          Learn More
-        </button>
-      </div>
+       
     </div>
   );
 }

@@ -3,15 +3,15 @@ import { ChevronDown, ChevronUp } from 'lucide-react';
 
 const faqs = [
   {
-    question: "Is a factory license required for small-scale manufacturing units?",
+    question: "Is a factory licence required for small-scale manufacturing units?",
     answer: "Yes, if the unit employs 10 or more workers with power or 20 or more without power.",
   },
   {
     question: "Can I operate my factory while the application is pending?",
-    answer: "No, you must receive the license before commencing manufacturing operations.",
+    answer: "No, you must receive the licence before commencing manufacturing operations.",
   },
   {
-    question: "What is the validity of a factory license?",
+    question: "What is the validity of a factory licence?",
     answer: "Typically valid for 1 year; some states offer up to 5 years with renewal options.",
   },
   {
@@ -19,15 +19,15 @@ const faqs = [
     answer: "Most states, including Delhi, Haryana and UP, offer online applications and processing.",
   },
   {
-    question: "Who issues the Factory License in Delhi?",
+    question: "Who issues the Factory Licence in Delhi?",
     answer: "The Labour Department, Government of NCT of Delhi.",
   },
   {
     question: "Is physical inspection mandatory?",
-    answer: "Yes, the concerned authority inspects the premises before issuing the license.",
+    answer: "Yes, the concerned authority inspects the premises before issuing the licence.",
   },
   {
-    question: "Can Lawfinity help with inspections and renewals?",
+    question: "Can  factorylicence.in | help with inspections and renewals?",
     answer: "Yes, we offer end-to-end support including pre-inspection readiness and timely renewal services.",
   },
   {
@@ -43,38 +43,50 @@ export default function FaqSection() {
     setOpenIndex(openIndex === i ? null : i);
   };
 
-  return (  
+  // Split the FAQs into two halves
+  const mid = Math.ceil(faqs.length / 2);
+  const firstHalf = faqs.slice(0, mid);
+  const secondHalf = faqs.slice(mid);
+
+  return (
     <section className="bg-gradient-to-b from-[#f9f9ff] to-white py-16 px-6">
       <div className="max-w-5xl mx-auto">
         <h2 className="text-3xl sm:text-4xl font-semibold text-center text-[#000000] mb-12">
           Frequently Asked Questions
         </h2>
 
-        <div className="space-y-5">
-          {faqs.map((faq, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-xl shadow transition-all duration-300 ease-in-out"
-            >
-              <button
-                onClick={() => toggle(index)}
-                className="w-full flex justify-between items-center text-left px-6 py-5 sm:py-3 font-medium text-gray-800 hover:text-[#7A3EF2] focus:outline-none"
-              >
-                <span className="text-base">{faq.question}</span>
-                {openIndex === index ? (
-                  <ChevronUp className="text-[#7A3EF2]" />
-                ) : (
-                  <ChevronDown className="text-gray-400" />
-                )}
-              </button>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {[firstHalf, secondHalf].map((half, colIdx) => (
+            <div key={colIdx} className="space-y-5">
+              {half.map((faq, index) => {
+                const actualIndex = colIdx === 0 ? index : index + mid;
+                return (
+                  <div
+                    key={actualIndex}
+                    className="bg-white rounded-xl shadow transition-all duration-300 ease-in-out"
+                  >
+                    <button
+                      onClick={() => toggle(actualIndex)}
+                      className="w-full flex justify-between items-center text-left px-6 py-5 sm:py-3 font-medium text-gray-800 hover:text-[#7A3EF2] focus:outline-none"
+                    >
+                      <span className="text-base">{faq.question}</span>
+                      {openIndex === actualIndex ? (
+                        <ChevronUp className="text-[#7A3EF2]" />
+                      ) : (
+                        <ChevronDown className="text-gray-400" />
+                      )}
+                    </button>
 
-              <div
-                className={`overflow-hidden px-6 transition-all duration-300 text-gray-600 text-base ${
-                  openIndex === index ? 'max-h-96 pb-2' : 'max-h-0'
-                }`}
-              >
-                <p>{faq.answer}</p>
-              </div>
+                    <div
+                      className={`overflow-hidden px-6 transition-all duration-300 text-gray-600 text-base ${
+                        openIndex === actualIndex ? 'max-h-96 pb-2' : 'max-h-0'
+                      }`}
+                    >
+                      <p>{faq.answer}</p>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           ))}
         </div>

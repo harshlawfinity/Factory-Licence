@@ -9,15 +9,18 @@ import WorkingProcess from "./components/WorkingProcess"
 import TestimonialCarousel from "./components/TestimonialCarousel"
 import CallToActionSection from "./components/CallToActionSection"
 import Footer from "./components/Footer"
+import ScrollTop from "./components/ScrollTop"
 import FactoryLicensePage from "./components/FactoryLicensePage"
 import FaqSection from "./components/FaqSection"
 import Routing from "./utils/Routing.jsx"
+
 
 
 const App = () => {
   return (
     <div className='text-amber-300'>
       <Navbar />
+      <ScrollTop />
       <Routing />
       <Footer />
       

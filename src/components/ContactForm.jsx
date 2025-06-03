@@ -1,5 +1,12 @@
 import React, { useState } from "react";
-import { FiUser, FiPhone, FiMail, FiMessageSquare } from "react-icons/fi";
+import axios from "axios";
+import {
+  FiUser,
+  FiPhone,
+  FiMail,
+  FiMessageSquare,
+  FiKey,
+} from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
 
 const HeroForm = () => {
@@ -8,6 +15,7 @@ const HeroForm = () => {
     phone: "",
     email: "",
     description: "",
+    otp: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const navigate = useNavigate();
@@ -27,41 +35,56 @@ const HeroForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-
-    const dataToSend = {
-      ...formData,
-      date: new Date().toLocaleDateString(),
-    };
-
     try {
-      const response = await fetch(
-        "https://hook.eu2.make.com/qqye3i7whwnu8w9a0u1pre3j0dsz7et6",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(dataToSend),
-        }
+      const now = new Date();
+      const istOffset = 5.5 * 60 * 60 * 1000;
+      const istTime = new Date(now.getTime() + istOffset);
+      const timestamp = istTime.toISOString().replace("T", " ").split(".")[0];
+
+      const dataToSend = {
+        name: formData.name,
+        phone: formData.phone,
+        email: formData.email,
+        description: formData.description,
+        timestamp,
+      };
+
+      console.log("Sending form data:", dataToSend);
+
+      const response = await axios.post(
+        "https://hook.eu2.make.com/zprge6g8im5axb6r4vpzmtxuemo6syoi",
+        dataToSend
       );
 
-      if (response.ok) {
-        navigate("/thankyou");
+      if (response.status === 200) {
+        alert("Form submitted successfully!");
+        navigate("/thank-you");
+        setFormData({
+          name: "",
+          phone: "",
+          email: "",
+          description: "",
+          otp: "",
+        });
       } else {
-        alert("Submission failed. Try again.");
-        setIsSubmitting(false);
+        alert("Failed to submit the form. Please try again.");
       }
     } catch (error) {
       console.error("Error submitting form:", error);
-      alert("Something went wrong. Please try again.");
+      alert("An error occurred. Please try again later.");
+    } finally {
       setIsSubmitting(false);
     }
   };
 
   return (
-    <div className=" ">
-      <div className="max-w-lg mx-auto bg-gray-50 md:p-8 p-0 rounded-2xl  ">
+    <div>
+      <div className="max-w-lg mx-auto bg-gray- md:p-8 p-0 rounded-2xl">
         {/* Heading */}
         <div className="text-center mb-4">
-          <h2 className="text-3xl font-semibold text-[#7A3EF2]">Let’s Connect Together</h2>
+          <h2 className="md:text-2xl text-xl font-semibold text-[#7A3EF2]">
+            Let’s Connect Together
+          </h2>
           <p className="text-gray-600 mt-2 text-sm">
             Share your details & we’ll connect to you.
           </p>
@@ -77,13 +100,13 @@ const HeroForm = () => {
               name="name"
               value={formData.name}
               onChange={handleInputChange}
-              placeholder="Your name"
+              placeholder="Your name*"
               className="w-full bg-transparent outline-none text-gray-700"
               required
             />
           </div>
 
-          {/* Phone */}
+          {/* Phone + Send OTP */}
           <div className="flex items-center bg-white border border-gray-300 rounded-md p-3 shadow-sm">
             <FiPhone className="text-gray-400 text-xl mr-3" />
             <input
@@ -91,13 +114,41 @@ const HeroForm = () => {
               name="phone"
               value={formData.phone}
               onChange={handleInputChange}
-              placeholder="10-digit mobile number"
-              className="w-full bg-transparent outline-none text-gray-700"
+              placeholder="10-digit mobile number*"
+              className="w-full bg-transparent outline-none text-gray-700 mr-2"
               pattern="^\d{10}$"
               title="Phone number must be exactly 10 digits"
               required
             />
+            {/* <button
+              type="button"
+              onClick={() => alert("OTP sent!")} 
+              className="md:text-sm bg-[#7A3EF2] text-white py-1 px-4 rounded-md text-xs font-semibold hover:underline"
+            >
+              Send OTP
+            </button> */}
           </div>
+
+          {/* OTP Field */}
+          {/* <div className="flex items-center bg-white border border-gray-300 rounded-md p-3 shadow-sm">
+            <FiKey className="text-gray-400 text-xl mr-3" />
+            <input
+              type="text"
+              name="otp"
+              value={formData.otp}
+              onChange={handleInputChange}
+              placeholder="Enter OTP"
+              className="w-full bg-transparent outline-none text-gray-700"
+            />
+
+             <button
+              type="button"
+              onClick={() => alert("OTP sent!")} 
+              className="md:text-sm bg-[#7A3EF2] text-white py-1 px-4 rounded-md text-xs font-semibold hover:underline"
+            >
+              Verify  
+            </button>
+          </div> */}
 
           {/* Email */}
           <div className="flex items-center bg-white border border-gray-300 rounded-md p-3 shadow-sm">
@@ -114,7 +165,7 @@ const HeroForm = () => {
           </div>
 
           {/* Description */}
-          <div className="flex items-start bg-white border border-gray-300 rounded-md p-3 shadow-sm">
+          {/* <div className="flex items-start bg-white border border-gray-300 rounded-md p-3 shadow-sm">
             <FiMessageSquare className="text-gray-400 text-xl mr-3 mt-1" />
             <textarea
               name="description"
@@ -125,7 +176,7 @@ const HeroForm = () => {
               className="w-full bg-transparent outline-none text-gray-700 resize-none"
               required
             />
-          </div>
+          </div> */}
 
           {/* Submit Button */}
           <button
@@ -146,3 +197,4 @@ const HeroForm = () => {
 };
 
 export default HeroForm;
+

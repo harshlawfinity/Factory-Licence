@@ -7,18 +7,18 @@ const Section = ({ title, children }) => (
   </section>
 );
 
-export default function FactoryLicensePage() {
+export default function FactoryLicencePage() {
   return (
     <div className=" ">
       <div className="bg-gradient-to-br from-[#7A3EF2] to-[#a674f7] text-white py-20 px-6">
         <div className="max-w-6xl py-20 mx-auto text-center">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6">
-            FACTORY LICENSE REGISTRATION IN <br />
+            FACTORY LICENCE REGISTRATION IN <br />
             DELHI, HARYANA & UTTAR PRADESH
           </h1>
           <p className="text-lg sm:text-xl max-w-2xl mx-auto mb-8">
             Ensure compliance, protect your workforce, and legitimize your
-            operations with expert-backed factory license support across NCR.
+            operations with expert-backed factory licence support across NCR.
           </p>
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
             <button className="bg-white text-[#7A3EF2] font-semibold px-6 py-3 rounded-full hover:bg-gray-100 transition">
@@ -34,10 +34,10 @@ export default function FactoryLicensePage() {
       <div className="max-w-7xl mx-auto   py-10 space-y-8">
         <Section title="Introduction">
         <p>
-          A Factory License is a mandatory legal obligation under the Factories
+          A Factory Licence is a mandatory legal obligation under the Factories
           Act, 1948, required for those premises which carry out manufacturing
           processes employing 10 or more workers with the aid of power or
-          employing 20 or more workers without power. This license ensures that
+          employing 20 or more workers without power. This licence ensures that
           the factory has complied with the required safety, health and welfare
           standards for the workers.
         </p>
@@ -46,14 +46,14 @@ export default function FactoryLicensePage() {
       <Section title="Why is it needed?">
         <p>
           Operating a factory without one is a punishable offense under the
-          Factories Act, 1948. Factories running without a valid license can
+          Factories Act, 1948. Factories running without a valid licence can
           face heavy fines or imprisonment. Beyond legality, it assures safety
-          compliance, helps in securing other licenses, and builds trust with
+          compliance, helps in securing other licences, and builds trust with
           stakeholders.
         </p>
       </Section>
 
-      <Section title="Benefits of Obtaining a Factory License">
+      <Section title="Benefits of Obtaining a Factory Licence">
         <ul className="list-disc list-inside space-y-1">
           <li>Legal Recognition</li>
           <li>Enhanced Credibility</li>
@@ -106,14 +106,14 @@ export default function FactoryLicensePage() {
         </div>
       </Section>
 
-      <Section title="Steps for Obtaining the License">
+      <Section title="Steps for Obtaining the Licence">
         <div>
           <strong>Delhi:</strong>
           <ol className="list-decimal list-inside">
             <li>Prepare Documents</li>
             <li>Apply via MCD Portal</li>
             <li>Submit Form & Pay Fee</li>
-            <li>Inspection → License Issuance</li>
+            <li>Inspection → Licence Issuance</li>
           </ol>
         </div>
         <div>
@@ -129,7 +129,7 @@ export default function FactoryLicensePage() {
           <ol className="list-decimal list-inside">
             <li>Register on Nivesh Mitra</li>
             <li>Submit Application & Documents</li>
-            <li>Pay Fee → Inspection → License Issuance</li>
+            <li>Pay Fee → Inspection → Licence Issuance</li>
           </ol>
         </div>
       </Section>
@@ -150,7 +150,7 @@ export default function FactoryLicensePage() {
 
       <Section title="Timelines">
         <p>
-          Across Delhi, Haryana & UP, factory license processing takes
+          Across Delhi, Haryana & UP, factory licence processing takes
           approximately 15–18 working days depending on document readiness and
           inspections.
         </p>
