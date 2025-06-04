@@ -1,9 +1,20 @@
-import { useEffect, useState } from 'react';
+import { lazy, useEffect, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
-import { MousePointerClick, Users, Eye } from 'lucide-react';
-import { TbLicense } from "react-icons/tb";
-import { GrUserExpert } from "react-icons/gr";
 
+// Lucide-react icon
+const Users = lazy(() =>
+  import('lucide-react').then(mod => ({ default: mod.Users }))
+);
+
+// React-icons (tabler)
+const TbLicense = lazy(() =>
+  import('react-icons/tb').then(mod => ({ default: mod.TbLicense }))
+);
+
+// React-icons (grommet)
+const GrUserExpert = lazy(() =>
+  import('react-icons/gr').then(mod => ({ default: mod.GrUserExpert }))
+);
 export default function StatsSection() {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.3 });
   const [counts, setCounts] = useState({ clicks: 0, visitors: 0, pageviews: 0 });

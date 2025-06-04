@@ -1,6 +1,4 @@
-import React from 'react';
-import { ShieldCheck, Lock, Clock, CheckCircle, CalendarCheck, ClipboardList, FileText, Inbox } from 'lucide-react';
-
+  
 const FactoryLicence = () => {
   return (
     <div className="bg-gradient-to-bc text-gray-800 ">

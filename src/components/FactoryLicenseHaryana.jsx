@@ -1,15 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { lazy, useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
-import {
-  FaIndustry,
-  FaQuestionCircle,
-  FaCheckCircle,
-  FaUserCheck,
-  FaFileAlt,
-  FaListOl,
-  FaClock,
-  FaExclamationTriangle,
-} from "react-icons/fa";
+const FaIndustry = lazy(() => import("react-icons/fa").then(mod => ({ default: mod.FaIndustry })));
+const FaQuestionCircle = lazy(() => import("react-icons/fa").then(mod => ({ default: mod.FaQuestionCircle })));
+const FaCheckCircle = lazy(() => import("react-icons/fa").then(mod => ({ default: mod.FaCheckCircle })));
+const FaUserCheck = lazy(() => import("react-icons/fa").then(mod => ({ default: mod.FaUserCheck })));
+const FaFileAlt = lazy(() => import("react-icons/fa").then(mod => ({ default: mod.FaFileAlt })));
+const FaListOl = lazy(() => import("react-icons/fa").then(mod => ({ default: mod.FaListOl })));
+const FaClock = lazy(() => import("react-icons/fa").then(mod => ({ default: mod.FaClock })));
+const FaExclamationTriangle = lazy(() => import("react-icons/fa").then(mod => ({ default: mod.FaExclamationTriangle })));
 import hhhhh from '../assets/hhhhh.webp'
 
 import dmap from "../assets/harayanamap.webp";
@@ -207,17 +205,17 @@ export default function FactoryLicenceHaryanaPage() {
                 and stakeholders by demonstrating timely compliance with
                 statutory requirements.
               </li>
-              <li>
+              <li className="text-justify ">
                 Access to Government Schemes: It provides the eligibility for
                 various government incentives and schemes aimed at promoting
                 industrial growth.
               </li>
-              <li>
+              <li className="text-justify ">
                 Employee Welfare: It ensures that implementation of health,
                 safety and welfare measures for the employees, ultimately
                 leading to increased efficiency and productivity.
               </li>
-              <li>
+              <li className="text-justify ">
                 Avoidance of Penalties: It safeguards from falling into any kind
                 of legal actions, fines and potential shutdowns due to
                 non-compliance.
@@ -253,12 +251,12 @@ export default function FactoryLicenceHaryanaPage() {
             }
           >
             <ul className="list-disc pl-6 space-y-2 text-gray-800">
-              <li>Building Plan Approval</li>
-              <li>Layout Plan as per Factories Act</li>
-              <li>KYC Documents of Owners/Directors</li>
-              <li>Business Registration documents of firm/company</li>
-              <li>Sale Deed/ Rent Agreement of premises.</li>
-              <li>Sanctioned load from HVPNL / Latest Electricity Bill</li>
+              <li className="text-justify ">Building Plan Approval</li>
+              <li className="text-justify ">Layout Plan as per Factories Act</li>
+              <li className="text-justify ">KYC Documents of Owners/Directors</li>
+              <li className="text-justify ">Business Registration documents of firm/company</li>
+              <li className="text-justify ">Sale Deed/ Rent Agreement of premises.</li>
+              <li className="text-justify ">Sanctioned load from HVPNL / Latest Electricity Bill</li>
             </ul>
           </Section>
 
@@ -272,27 +270,27 @@ export default function FactoryLicenceHaryanaPage() {
             }
           >
             <ol className="list-decimal pl-6 space-y-3 text-gray-800">
-              <li>
+              <li className="text-justify ">
                 Online Registration: Visit the Haryana Labour Department Portal
                 and create an account.
               </li>
-              <li>
+              <li className="text-justify ">
                 Application Form: Fill out the form with accurate factory
                 details.
               </li>
-              <li>
+              <li className="text-justify ">
                 Document Upload: Upload all required documents in the specified
                 format.
               </li>
-              <li>
+              <li className="text-justify ">
                 {" "}
                 Fee Payment: Pay the application fee through the online portal.
               </li>
-              <li>
+              <li className="text-justify ">
                 Inspection: The department will conduct an inspection of the
                 premises.
               </li>
-              <li>
+              <li className="text-justify ">
                 Licence Approval: Post-inspection, the licence will be granted
                 if all criteria are met.
               </li>
@@ -327,12 +325,12 @@ export default function FactoryLicenceHaryanaPage() {
             }
           >
             <ul className="text-justify list-disc pl-6 space-y-2 text-gray-800 ">
-              <li>
+              <li className="text-justify ">
                 Non-compliance with the Factories Act, 1948, may result in fines
                 up to ₹1,00,000 or imprisonment up to 2 years.
                 <br />
               </li>
-              <li>
+              <li className="text-justify ">
                 A late factory licence renewal fees at 25% is payable, which is
                 charged after the application for renewal is submitted. The date
                 of submission of the application will be noted to calculate the

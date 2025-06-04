@@ -1,6 +1,12 @@
-import { useState } from 'react';
-import { ChevronDown, ChevronUp } from 'lucide-react';
+import { lazy, useState } from 'react';
 
+const ChevronDown = lazy(() =>
+  import('lucide-react').then((mod) => ({ default: mod.ChevronDown }))
+);
+
+const ChevronUp = lazy(() =>
+  import('lucide-react').then((mod) => ({ default: mod.ChevronUp }))
+);
 const faqs = [
   {
     question: "Is a factory licence required for small-scale manufacturing units?",

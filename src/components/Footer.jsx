@@ -1,4 +1,11 @@
-import { Mail, PhoneCall, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
+import React, { lazy, Suspense } from 'react';
+
+const Mail = lazy(() => import('lucide-react').then(mod => ({ default: mod.Mail })));
+const PhoneCall = lazy(() => import('lucide-react').then(mod => ({ default: mod.PhoneCall })));
+const Facebook = lazy(() => import('lucide-react').then(mod => ({ default: mod.Facebook })));
+const Twitter = lazy(() => import('lucide-react').then(mod => ({ default: mod.Twitter })));
+const Instagram = lazy(() => import('lucide-react').then(mod => ({ default: mod.Instagram })));
+const Linkedin = lazy(() => import('lucide-react').then(mod => ({ default: mod.Linkedin })));
 import FL from './FL2.jsx'
 import { Link } from 'react-router-dom';
 export default function Footer() {

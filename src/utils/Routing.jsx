@@ -1,26 +1,23 @@
-import React, { Suspense } from "react";
+import React, { Suspense, lazy } from "react";
 import { Link, Route, Routes } from "react-router-dom";
-import Home from '../Home';
-import FactoryLicensePage from '../components/FactoryLicensePage';
-import FactoryLicenseDelhi from '../components/FactoryLicenseDelhi.jsx';
-import FactoryLicenseHaryana from '../components/FactoryLicenseHaryana.jsx';
-import FactoryLicenseUP from '../components/FactoryLicenseUP.jsx';
- import Contact from '../components/Contact.jsx';
-import PrivacyPolicy from '../components/PrivacyPolicy.jsx';
-import RefundCancellation from '../components/RefundCancellation.jsx';
-import TermsConditions from '../components/TermsConditions.jsx';
-import ThankYou from '../components/ThankYou.jsx';
-import Payments from '../components/Payments.jsx';
-import AboutUS from '../components/AboutUS.jsx';
 
-
-
-
+// Lazy-loaded components
+const Home = lazy(() => import('../Home'));
+const FactoryLicensePage = lazy(() => import('../components/FactoryLicensePage'));
+const FactoryLicenseDelhi = lazy(() => import('../components/FactoryLicenseDelhi.jsx'));
+const FactoryLicenseHaryana = lazy(() => import('../components/FactoryLicenseHaryana.jsx'));
+const FactoryLicenseUP = lazy(() => import('../components/FactoryLicenseUP.jsx'));
+const Contact = lazy(() => import('../components/Contact.jsx'));
+const PrivacyPolicy = lazy(() => import('../components/PrivacyPolicy.jsx'));
+const RefundCancellation = lazy(() => import('../components/RefundCancellation.jsx'));
+const TermsConditions = lazy(() => import('../components/TermsConditions.jsx'));
+const ThankYou = lazy(() => import('../components/ThankYou.jsx'));
+const Payments = lazy(() => import('../components/Payments.jsx'));
+const AboutUS = lazy(() => import('../components/AboutUS.jsx'));
 
 const Routing = () => {
   return (
-    <>
-      <Routes>
+       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/factory-licence" element={<FactoryLicensePage />} />
@@ -34,15 +31,16 @@ const Routing = () => {
         <Route path="/payments" element={<Payments />} />
         <Route path="/about" element={<AboutUS />} />
 
-
-        
-        <Route path="*" element={<div className="text-center mt-20">Page Not Found. <Link to="/" className="text-blue-500">Go Home</Link></div>} />
-
-        
-     
+        <Route
+          path="*"
+          element={
+            <div className="text-center mt-20">
+              Page Not Found. <Link to="/" className="text-blue-500">Go Home</Link>
+            </div>
+          }
+        />
       </Routes>
-    </>
-  );
+   );
 };
 
 export default Routing;

@@ -1,15 +1,13 @@
 import React, { lazy, Suspense, useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
-import {
-  FaIndustry,
-  FaQuestionCircle,
-  FaCheckCircle,
-  FaUserCheck,
-  FaFileAlt,
-  FaListOl,
-  FaClock,
-  FaExclamationTriangle,
-} from "react-icons/fa";
+const FaIndustry = lazy(() => import("react-icons/fa").then(mod => ({ default: mod.FaIndustry })));
+const FaQuestionCircle = lazy(() => import("react-icons/fa").then(mod => ({ default: mod.FaQuestionCircle })));
+const FaCheckCircle = lazy(() => import("react-icons/fa").then(mod => ({ default: mod.FaCheckCircle })));
+const FaUserCheck = lazy(() => import("react-icons/fa").then(mod => ({ default: mod.FaUserCheck })));
+const FaFileAlt = lazy(() => import("react-icons/fa").then(mod => ({ default: mod.FaFileAlt })));
+const FaListOl = lazy(() => import("react-icons/fa").then(mod => ({ default: mod.FaListOl })));
+const FaClock = lazy(() => import("react-icons/fa").then(mod => ({ default: mod.FaClock })));
+const FaExclamationTriangle = lazy(() => import("react-icons/fa").then(mod => ({ default: mod.FaExclamationTriangle })));
 import ddddd from '../assets/ddddd.webp'
 
 import dmap from "../assets/del.webp";
@@ -115,7 +113,10 @@ export default function FactoryLicenceDelhiPage() {
         <div className="absolute inset-0 z-0">
           {heroBackgrounds.map((img, index) => (
             <img
+              loading="lazy"
+
               key={index}
+ 
               src={img}
               alt={`bg-${index}`}
               className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${
@@ -146,7 +147,11 @@ export default function FactoryLicenceDelhiPage() {
           <div className="md:w-1/2 mt-10 md:mt-0 flex justify-end">
             <div className="w-full max-w-md aspect-[4/3] relative">
               <img
+                loading="lazy"
+
                 src={dmap}
+                  loading="lazy"
+
                 alt="Factory Licence Delhi"
                 width={600}
                 height={450}
@@ -234,17 +239,17 @@ export default function FactoryLicenceDelhiPage() {
                 and stakeholders by demonstrating timely compliance with
                 statutory requirements.
               </li>
-              <li>
+              <li className="text-justify ">
                 Access to Government Schemes: It provides the eligibility for
                 various government incentives and schemes aimed at promoting
                 industrial growth.
               </li>
-              <li>
+              <li className="text-justify ">
                 Employee Welfare: It ensures that implementation of health,
                 safety and welfare measures for the employees, ultimately
                 leading to increased efficiency and productivity.
               </li>
-              <li>
+              <li className="text-justify ">
                 Avoidance of Penalties: It safeguards from falling into any kind
                 of legal actions, fines and potential shutdowns due to
                 non-compliance.
@@ -281,15 +286,15 @@ export default function FactoryLicenceDelhiPage() {
             }
           >
             <ul className="list-disc pl-6 space-y-2 text-gray-800">
-              <li>Building Plan Approval</li>
-              <li>Layout Plan as per Factories Act</li>
-              <li>KYC Documents of Owners/Directors</li>
-              <li>Business Registration documents of firm/company</li>
-              <li>Sale Deed/ Rent Agreement of premises.</li>
-              <li>Sanctioned load from HVPNL / Latest Electricity Bill</li>
-              <li>DPCC NOC</li>
-              <li>Fire NOC (for premises above 250 sq metre)</li>
-              <li>Property Tax Receipt</li>
+              <li className="text-justify ">Building Plan Approval</li>
+              <li className="text-justify ">Layout Plan as per Factories Act</li>
+              <li className="text-justify ">KYC Documents of Owners/Directors</li>
+              <li className="text-justify ">Business Registration documents of firm/company</li>
+              <li className="text-justify ">Sale Deed/ Rent Agreement of premises.</li>
+              <li className="text-justify ">Sanctioned load from HVPNL / Latest Electricity Bill</li>
+              <li className="text-justify ">DPCC NOC</li>
+              <li className="text-justify ">Fire NOC (for premises above 250 sq metre)</li>
+              <li className="text-justify ">Property Tax Receipt</li>
             </ul>
           </Section>
 
@@ -303,30 +308,33 @@ export default function FactoryLicenceDelhiPage() {
             }
           >
             <ol className="list-decimal pl-6 space-y-3 text-gray-800">
-              <li>
+              <li className="text-justify ">
                 Document Preparation: Gather all the required documents as per
                 the checklist.
               </li>
-              <li>
+              <li className="text-justify ">
                 Online Application: Visit the MCD Portal and navigate to the
                 Trade & Factory Licences section.
               </li>
-              <li>
+              <li className="text-justify ">
                 Form Submission: Fill out the application form and upload
                 necessary documents.
               </li>
-              <li>Fee Payment: Pay the prescribed licence fee online.</li>
-              <li>
+              <li className="text-justify ">Fee Payment: Pay the prescribed licence fee online.</li>
+              <li className="text-justify ">
                 Inspection: Await inspection by the concerned authorities.
               </li>
-              <li>
+              <li className="text-justify ">
                 Licence Issuance: Upon successful verification, the factory
                 licence will be issued.
               </li>
             </ol>
           </Section>
 
-          <img src={ddddd} alt="" />
+          <img
+            loading="lazy"
+ src={ddddd} alt="Factoy Licence In Delhi Steps"   loading="lazy"
+ />
 
           <Section
             id="timelines"
@@ -354,12 +362,12 @@ export default function FactoryLicenceDelhiPage() {
             }
           >
             <ul className="text-justify list-disc pl-6 space-y-2 text-gray-800 ">
-              <li>
+              <li className="text-justify ">
                 Operating a factory without a valid licence can lead to
                 penalties up to ₹1,00,000 or imprisonment up to 2 years or both.{" "}
                 <br />
               </li>
-              <li>
+              <li className="text-justify ">
                 Delayed renewal attracts a late fee of 25% of the fee payable
                 for a calendar year which is charged wherein the application for
                 renewal has been submitted in office after expiry of the time
@@ -372,6 +380,8 @@ export default function FactoryLicenceDelhiPage() {
 
           {/* <div className="pt-8">
             <img
+              loading="lazy"
+
               src={fl1}
               alt="Factory Registration Process"
               className="rounded-lg shadow-md w-full"

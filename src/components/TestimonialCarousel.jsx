@@ -1,6 +1,7 @@
-import { useEffect, useRef, useState } from 'react';
-import { ArrowLeft, ArrowRight, Star } from 'lucide-react';
-import innobev from '../assets/logo/innobev.webp';
+import { lazy, useEffect, useRef, useState } from 'react';
+const Star = lazy(() =>
+  import('lucide-react').then((mod) => ({ default: mod.Star }))
+);import innobev from '../assets/logo/innobev.webp';
 import lathar from '../assets/logo/lathar.webp';
 import servotec from '../assets/logo/servotec.webp';
 import sleepy from '../assets/logo/sleepy.webp';
@@ -118,6 +119,8 @@ const intervalRef = useRef(null); // ✅ JavaScript-compatible
         <img
           src={avatar}
           alt={name}
+            loading="lazy"
+
           className="h-32 border-4 border-white   scale-110"
         />
       </div>

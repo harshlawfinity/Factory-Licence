@@ -1,4 +1,3 @@
-import { Mail, Phone, User } from "lucide-react";
 import ContactForm from "./ContactForm";
 
 export default function ContactUs() {

@@ -1,41 +1,60 @@
 import { useEffect, useState } from 'react';
-import fa from '../assets/fa.gif';
-import lg1 from '../assets/lg1.gif';
 import lg2 from '../assets/lg2.gif';
-import { Mail, PhoneCall, Facebook, Twitter, Instagram } from 'lucide-react';
 
 const FL = () => {
-  const [showImage, setShowImage] = useState(true);
+  const [showImage, setShowImage] = useState(false);       // Controls the text/GIF switch
+  const [startAnimation, setStartAnimation] = useState(false); // Delays animation start
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setShowImage(prev => !prev);
-    }, 3000);
+    const timeout = setTimeout(() => {
+      setStartAnimation(true);
+    }, 3000); // Wait 3 seconds before starting animation
 
-    return () => clearInterval(interval);
+    return () => clearTimeout(timeout);
   }, []);
+
+  useEffect(() => {
+    if (startAnimation) {
+      const interval = setInterval(() => {
+        setShowImage(prev => !prev);
+      }, 3000);
+      return () => clearInterval(interval);
+    }
+  }, [startAnimation]);
 
   return (
     <div className="relative w-[215px] h-[60px] overflow-hidden flex items-center justify-start">
-      {/* Sliding Factory Image */}
-      <div
-        className={`    flex justify-start items-center transition-all duration-1000 ease-in-out ${
-          showImage ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-full'
-        }`}
-      >
-        <img src={lg2} alt="Factory GIF" className="w-80 " />
-      </div>
+      {/* Sliding GIF (appears after 3s) */}
+      {startAnimation && (
+        <div
+          className={`flex justify-start items-center absolute left-0 top-0 w-full h-full transition-all duration-1000 ease-in-out ${
+            showImage ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-full'
+          }`}
+        >
+          <img src={lg2} alt="Factory GIF" className="w-32"   loading="lazy"
+ />
+        </div>
+      )}
 
-      {/* Sliding Factory Text */}
-      <div
-        className={`absolute left-0 top-0 w-full h-full flex items-center text-2xl font-semibold text-[#7A3EF2] transition-all duration-1000 ease-in-out ${
-          showImage ? 'opacity-0 translate-y-full' : 'opacity-100 translate-y-0'
-        }`}
-      >
-        Factory
-      </div>
+      {/* Sliding Factory Text (only when animation has started) */}
+      {startAnimation && (
+        <div
+          className={`absolute ml-2 left-0 top-0 h-full flex items-center text-2xl font-semibold text-[#7A3EF2] transition-all duration-1000 ease-in-out ${
+            showImage ? 'opacity-0 translate-y-full' : 'opacity-100 translate-y-0'
+          }`}
+        >
+          Factory
+        </div>
+      )}
 
-      {/* Always-visible Licence.com */}
+      {/* Initial Static Text (before animation starts) */}
+      {!startAnimation && (
+        <div className="text-2xl ml-2 font-semibold text-[#7A3EF2]">
+          Factory
+        </div>
+      )}
+
+      {/* Always-visible Licence.in */}
       <div className="ml-auto text-2xl font-semibold text-[#7A3EF2]">
         Licence.In
       </div>

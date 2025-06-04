@@ -12,6 +12,8 @@ export default function FeatureCard() {
             src={f1} // Replace with your image path
             alt="Modern design visual"
             className="rounded-3xl w-full h-auto object-cover"
+              loading="lazy"
+
           />
         </div>
 

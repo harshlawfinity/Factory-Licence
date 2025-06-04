@@ -1,15 +1,34 @@
-import React, { useEffect, useState } from "react";
+import React, { lazy, useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
-import {
-  FaCheckCircle,
-  FaPhoneAlt,
-  FaEnvelope,
-  FaUserTie,
-} from "react-icons/fa";
-import uuu from '../assets/uuu.webp'
 
-import { FaIndustry, FaQuestionCircle,   FaUserCheck, FaFileAlt, FaListOl, FaClock, FaExclamationTriangle } from 'react-icons/fa';
+import uuu from "../assets/uuu.webp";
 
+const FaIndustry = lazy(() =>
+  import("react-icons/fa").then((mod) => ({ default: mod.FaIndustry }))
+);
+const FaQuestionCircle = lazy(() =>
+  import("react-icons/fa").then((mod) => ({ default: mod.FaQuestionCircle }))
+);
+const FaCheckCircle = lazy(() =>
+  import("react-icons/fa").then((mod) => ({ default: mod.FaCheckCircle }))
+);
+const FaUserCheck = lazy(() =>
+  import("react-icons/fa").then((mod) => ({ default: mod.FaUserCheck }))
+);
+const FaFileAlt = lazy(() =>
+  import("react-icons/fa").then((mod) => ({ default: mod.FaFileAlt }))
+);
+const FaListOl = lazy(() =>
+  import("react-icons/fa").then((mod) => ({ default: mod.FaListOl }))
+);
+const FaClock = lazy(() =>
+  import("react-icons/fa").then((mod) => ({ default: mod.FaClock }))
+);
+const FaExclamationTriangle = lazy(() =>
+  import("react-icons/fa").then((mod) => ({
+    default: mod.FaExclamationTriangle,
+  }))
+);
 import dmap from "../assets/upmap.webp";
 import fl1 from "../assets/fl1.webp";
 import ContactForm from "./ContactForm";
@@ -36,16 +55,76 @@ export default function FactoryLicenceUttarPradeshPage() {
     <div>
       <Helmet>
         <title>
-          Factory Licence Registration in Uttar Pradesh | Fast, Legal & Compliant
+          Factory Licence Registration in Uttar Pradesh | Fast, Legal &
+          Compliant
         </title>
         <meta
           name="description"
           content="Apply for your Factory Licence in Uttar Pradesh with expert support. Avoid penalties, comply with laws, and speed up your approval process. Get your licence hassle-free."
         />
+        <meta name="robots" content="index, follow" />
         <link
           rel="canonical"
-          href="https://yourwebsite.com/factory-licence-Uttar Pradesh"
+          href="https://factorylicence.in/factory-licence-in-uttar-pradesh"
         />
+
+        {/* Open Graph Meta Tags */}
+        <meta
+          property="og:title"
+          content="Factory Licence Registration in Uttar Pradesh | Fast, Legal & Compliant"
+        />
+        <meta
+          property="og:description"
+          content="Apply for your Factory Licence in Uttar Pradesh with expert support. Avoid penalties, comply with laws, and speed up your approval process."
+        />
+        <meta
+          property="og:url"
+          content="https://factorylicence.in/factory-licence-in-uttar-pradesh"
+        />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:image"
+          content="https://factorylicence.in/public/fav2.webp"
+        />
+
+        {/* Twitter Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Factory Licence Registration in Uttar Pradesh | Fast, Legal & Compliant"
+        />
+        <meta
+          name="twitter:description"
+          content="Apply for your Factory Licence in Uttar Pradesh with expert support. Avoid penalties, comply with laws, and speed up your approval process."
+        />
+        <meta
+          name="twitter:image"
+          content="https://factorylicence.in/public/fav2.webp"
+        />
+
+        {/* Schema.org JSON-LD Markup */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            name: "Factory Licence Uttar Pradesh",
+            image: "https://factorylicence.in/public/fav2.webp",
+            url: "https://factorylicence.in/factory-licence-in-uttar-pradesh",
+            telephone: "+91-9910774687",
+            address: {
+              "@type": "PostalAddress",
+              streetAddress:
+                "T-10, Plot No. -7, 3rd Floor, Pankaj Plaza, Pocket-7, Sector-12, Dwarka",
+              addressLocality: "New Uttar Pradesh",
+              addressRegion: "DL",
+              postalCode: "110078",
+              addressCountry: "IN",
+            },
+            description:
+              "We offer expert assistance in obtaining your factory licence in Uttar Pradesh. Fast approvals, end-to-end support, and full legal compliance.",
+            openingHours: "Mo-Sa 10:00-19:00",
+          })}
+        </script>
       </Helmet>
 
       {/* Hero Section */}
@@ -55,6 +134,7 @@ export default function FactoryLicenceUttarPradeshPage() {
         <div className="absolute inset-0 z-0">
           {heroBackgrounds.map((img, index) => (
             <img
+              loading="lazy"
               key={index}
               src={img}
               alt={`bg-${index}`}
@@ -67,7 +147,7 @@ export default function FactoryLicenceUttarPradeshPage() {
         </div>
 
         {/* Hero Content */}
-       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-center relative z-20">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-center relative z-20">
           <div className="md:w-1/2">
             <h1 className="text-4xl md:text-5xl font-semibold mb-6">
               Factory Licence Registration in Uttar Pradesh
@@ -86,6 +166,7 @@ export default function FactoryLicenceUttarPradeshPage() {
           <div className="md:w-1/2 mt-10 md:mt-0 flex justify-end">
             <div className="w-full max-w-md aspect-[4/3] relative">
               <img
+                loading="lazy"
                 src={dmap}
                 alt="Factory Licence Uttar Pradesh"
                 width={600}
@@ -103,7 +184,15 @@ export default function FactoryLicenceUttarPradeshPage() {
       <section className="max-w-7xl mx-auto py-16 md:px-0 px-4 grid md:grid-cols-4 gap-10 text-gray-800 relative">
         {/* Left Side Content */}
         <div className="md:col-span-3 space-y-14">
-  <Section id="what-is" title={<><FaIndustry className="inline mr-2" />What is a Factory Licence?</>}>
+          <Section
+            id="what-is"
+            title={
+              <>
+                <FaIndustry className="inline mr-2" />
+                What is a Factory Licence?
+              </>
+            }
+          >
             <p className="text-justify">
               A Factory Licence is a mandatory legal obligation under the
               Factories Act, 1948, required for those premises which carry out
@@ -114,7 +203,15 @@ export default function FactoryLicenceUttarPradeshPage() {
             </p>
           </Section>
 
-  <Section id="why-required" title={<><FaQuestionCircle className="inline mr-2" />Why is it needed?</>}>
+          <Section
+            id="why-required"
+            title={
+              <>
+                <FaQuestionCircle className="inline mr-2" />
+                Why is it needed?
+              </>
+            }
+          >
             <ul className="list-disc pl-6 space-y-2 text-gray-800">
               <li className="text-justify ">
                 As operating a factory without one is a punishable offense under
@@ -140,85 +237,179 @@ export default function FactoryLicenceUttarPradeshPage() {
             </ul>
           </Section>
 
-  <Section id="benefits" title={<><FaCheckCircle className="inline mr-2" />Benefits of Obtaining a Factory Licence</>}>
+          <Section
+            id="benefits"
+            title={
+              <>
+                <FaCheckCircle className="inline mr-2" />
+                Benefits of Obtaining a Factory Licence
+              </>
+            }
+          >
             <ul className="list-disc pl-6 space-y-2 text-gray-800">
               <li className="text-justify ">
-Legal Recognition: It provides a legal status to the manufacturing unit, ensuring smooth business operations.              </li>
+                Legal Recognition: It provides a legal status to the
+                manufacturing unit, ensuring smooth business operations.{" "}
+              </li>
               <li className="text-justify ">
-Enhanced Credibility: It builds trust among clients, suppliers and stakeholders by demonstrating timely compliance with statutory requirements.
+                Enhanced Credibility: It builds trust among clients, suppliers
+                and stakeholders by demonstrating timely compliance with
+                statutory requirements.
               </li>
-              <li>
-                Access to Government Schemes: It provides the eligibility for various government incentives and schemes aimed at promoting industrial growth.
+              <li className="text-justify ">
+                Access to Government Schemes: It provides the eligibility for
+                various government incentives and schemes aimed at promoting
+                industrial growth.
               </li>
-              <li>
-Employee Welfare: It ensures that implementation of health, safety and welfare measures for the employees, ultimately leading to increased efficiency and productivity.
+              <li className="text-justify ">
+                Employee Welfare: It ensures that implementation of health,
+                safety and welfare measures for the employees, ultimately
+                leading to increased efficiency and productivity.
               </li>
-              <li>
-                Avoidance of Penalties: It safeguards from falling into any kind of legal actions, fines and potential shutdowns due to non-compliance.
+              <li className="text-justify ">
+                Avoidance of Penalties: It safeguards from falling into any kind
+                of legal actions, fines and potential shutdowns due to
+                non-compliance.
               </li>
             </ul>
           </Section>
 
-  <Section id="eligibility" title={<><FaUserCheck className="inline mr-2" />Eligibility Criteria</>}>
+          <Section
+            id="eligibility"
+            title={
+              <>
+                <FaUserCheck className="inline mr-2" />
+                Eligibility Criteria
+              </>
+            }
+          >
             <p className="text-justify">
-             In Uttar Pradesh, any manufacturing unit with 10 or more workers using power or 20 or more without power, must register under the Factories Act, 1948, via the Labour Department, Government of Uttar Pradesh. The application process is facilitated through the Nivesh Mitra portal. 
+              In Uttar Pradesh, any manufacturing unit with 10 or more workers
+              using power or 20 or more without power, must register under the
+              Factories Act, 1948, via the Labour Department, Government of
+              Uttar Pradesh. The application process is facilitated through the
+              Nivesh Mitra portal.
             </p>
           </Section>
 
-  <Section id="documents" title={<><FaFileAlt className="inline mr-2" />Documents Required in Uttar Pradesh</>}>
+          <Section
+            id="documents"
+            title={
+              <>
+                <FaFileAlt className="inline mr-2" />
+                Documents Required in Uttar Pradesh
+              </>
+            }
+          >
             <ul className="list-disc pl-6 space-y-2 text-gray-800">
-              <li>Building Plan Approval</li>
-              <li>Layout Plan as per Factories Act</li>
-              <li>KYC Documents of Owners/Directors</li>
-              <li>Business Registration documents of firm/company</li>
-              <li>Structural Stability certificate from approved architect.</li>
-              <li>Sale Deed/ Rent Agreement of premises.</li>
-              <li>Manufacturing process flow chart</li>
-              <li>CA certificate showing Capital investment.</li>
-             </ul>
+              <li className="text-justify ">Building Plan Approval</li>
+              <li className="text-justify ">
+                Layout Plan as per Factories Act
+              </li>
+              <li className="text-justify ">
+                KYC Documents of Owners/Directors
+              </li>
+              <li className="text-justify ">
+                Business Registration documents of firm/company
+              </li>
+              <li className="text-justify ">
+                Structural Stability certificate from approved architect.
+              </li>
+              <li className="text-justify ">
+                Sale Deed/ Rent Agreement of premises.
+              </li>
+              <li className="text-justify ">
+                Manufacturing process flow chart
+              </li>
+              <li className="text-justify ">
+                CA certificate showing Capital investment.
+              </li>
+            </ul>
           </Section>
 
-  <Section id="steps" title={<><FaListOl className="inline mr-2" />Steps to Get a Factory Licence</>}>
+          <Section
+            id="steps"
+            title={
+              <>
+                <FaListOl className="inline mr-2" />
+                Steps to Get a Factory Licence
+              </>
+            }
+          >
             <ol className="list-decimal pl-6 space-y-3 text-gray-800">
-              <li>
-               Portal Access: Register on the Nivesh Mitra Portal (niveshmitra.up.nic.in).
+              <li className="text-justify ">
+                Portal Access: Register on the Nivesh Mitra Portal
+                (niveshmitra.up.nic.in).
               </li>
-              <li>
-                		Application Submission: Fill in the application form with factory details and upload necessary documents.
-
+              <li className="text-justify ">
+                Application Submission: Fill in the application form with
+                factory details and upload necessary documents.
               </li>
-              <li>
+              <li className="text-justify ">
                 Form Submission: Fill out the application form and upload
                 necessary documents.
               </li>
-              <li>Fee Payment: Pay the requisite fee online.</li>
-              <li>
-                Inspection: The Labour Department will schedule an inspection of the factory premises.</li>
-              <li>
-               Licence Issuance: After successful verification, the factory licence will be issued. 
+              <li className="text-justify ">
+                Fee Payment: Pay the requisite fee online.
+              </li>
+              <li className="text-justify ">
+                Inspection: The Labour Department will schedule an inspection of
+                the factory premises.
+              </li>
+              <li className="text-justify ">
+                Licence Issuance: After successful verification, the factory
+                licence will be issued.
               </li>
             </ol>
           </Section>
-          <img src={uuu} alt="" />
+          <img loading="lazy" src={uuu} alt="" />
 
-  <Section id="timelines" title={<><FaClock className="inline mr-2" />Timelines</>}>
+          <Section
+            id="timelines"
+            title={
+              <>
+                <FaClock className="inline mr-2" />
+                Timelines
+              </>
+            }
+          >
             <p className="text-justify">
-              The registration of a Factory Licence in the state of Uttar Pradesh typically takes 15 to 18 working days, depending on document verification and government approvals. </p>
+              The registration of a Factory Licence in the state of Uttar
+              Pradesh typically takes 15 to 18 working days, depending on
+              document verification and government approvals.{" "}
+            </p>
           </Section>
 
-  <Section id="penalties" title={<><FaExclamationTriangle className="inline mr-2 text-red-500" />Penalties in Case of Non-Compliance</>}>
+          <Section
+            id="penalties"
+            title={
+              <>
+                <FaExclamationTriangle className="inline mr-2 text-red-500" />
+                Penalties in Case of Non-Compliance
+              </>
+            }
+          >
             <ul className="text-justify list-disc pl-6 space-y-2 text-gray-800 ">
-              <li>
-               Running a factory without registration is a punishable offense and can lead to penalties up to ₹1,00,000 or imprisonment up to 2 years or both. <br />
+              <li className="text-justify ">
+                Running a factory without registration is a punishable offense
+                and can lead to penalties up to ₹1,00,000 or imprisonment up to
+                2 years or both. <br />
               </li>
-              <li>
-             A penalty for delayed renewal of a factory licence is a late fee of 25% of the renewal fee for the calendar year. This penalty applies when the renewal application is submitted after the deadline, which is 30 days before the licence expiry date. The system automatically calculates the total fee, including the late fee, which needs to be paid online.
+              <li className="text-justify ">
+                A penalty for delayed renewal of a factory licence is a late fee
+                of 25% of the renewal fee for the calendar year. This penalty
+                applies when the renewal application is submitted after the
+                deadline, which is 30 days before the licence expiry date. The
+                system automatically calculates the total fee, including the
+                late fee, which needs to be paid online.
               </li>
             </ul>
           </Section>
 
           {/* <div className="pt-8">
             <img
+              loading="lazy"
+
               src={fl1}
               alt="Factory Registration Process"
               className="rounded-lg shadow-md w-full"
@@ -233,31 +424,64 @@ Employee Welfare: It ensures that implementation of health, safety and welfare m
               <h3 className="text-lg font-semibold text-[#7A3EF2] mb-2">
                 Quick Links
               </h3>
-            <nav className="space-y-3 text-sm text-gray-700">
-  {[
-    { label: "What is a Factory Licence?", id: "what-is", icon: <FaIndustry className="inline mr-2" /> },
-    { label: "Why is it needed?", id: "why-required", icon: <FaQuestionCircle className="inline mr-2" /> },
-    { label: "Benefits", id: "benefits", icon: <FaCheckCircle className="inline mr-2" /> },
-    { label: "Eligibility Criteria", id: "eligibility", icon: <FaUserCheck className="inline mr-2" /> },
-    { label: "Documents Required", id: "documents", icon: <FaFileAlt className="inline mr-2" /> },
-    { label: "Steps to Get Licence", id: "steps", icon: <FaListOl className="inline mr-2" /> },
-    { label: "Timelines", id: "timelines", icon: <FaClock className="inline mr-2" /> },
-    { label: "Penalties", id: "penalties", icon: <FaExclamationTriangle className="inline mr-2 text-red-500" /> },
-  ].map((item) => (
-    <Link
-      key={item.id}
-      to={item.id}
-      smooth={true}
-      offset={-100}
-      duration={500}
-      className="cursor-pointer hover:text-[#7A3EF2] block"
-    >
-      {item.icon}
-      {item.label}
-    </Link>
-  ))}
-</nav>
-
+              <nav className="space-y-3 text-sm text-gray-700">
+                {[
+                  {
+                    label: "What is a Factory Licence?",
+                    id: "what-is",
+                    icon: <FaIndustry className="inline mr-2" />,
+                  },
+                  {
+                    label: "Why is it needed?",
+                    id: "why-required",
+                    icon: <FaQuestionCircle className="inline mr-2" />,
+                  },
+                  {
+                    label: "Benefits",
+                    id: "benefits",
+                    icon: <FaCheckCircle className="inline mr-2" />,
+                  },
+                  {
+                    label: "Eligibility Criteria",
+                    id: "eligibility",
+                    icon: <FaUserCheck className="inline mr-2" />,
+                  },
+                  {
+                    label: "Documents Required",
+                    id: "documents",
+                    icon: <FaFileAlt className="inline mr-2" />,
+                  },
+                  {
+                    label: "Steps to Get Licence",
+                    id: "steps",
+                    icon: <FaListOl className="inline mr-2" />,
+                  },
+                  {
+                    label: "Timelines",
+                    id: "timelines",
+                    icon: <FaClock className="inline mr-2" />,
+                  },
+                  {
+                    label: "Penalties",
+                    id: "penalties",
+                    icon: (
+                      <FaExclamationTriangle className="inline mr-2 text-red-500" />
+                    ),
+                  },
+                ].map((item) => (
+                  <Link
+                    key={item.id}
+                    to={item.id}
+                    smooth={true}
+                    offset={-100}
+                    duration={500}
+                    className="cursor-pointer hover:text-[#7A3EF2] block"
+                  >
+                    {item.icon}
+                    {item.label}
+                  </Link>
+                ))}
+              </nav>
             </div>
           </div>
         </aside>

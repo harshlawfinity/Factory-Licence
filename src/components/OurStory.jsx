@@ -1,9 +1,17 @@
-import {
-  ThumbsUp,
-  ShieldCheck,
-  Users,
-  Briefcase,
-} from 'lucide-react';
+
+const ThumbsUp = lazy(() =>
+  import('lucide-react').then(mod => ({ default: mod.ThumbsUp }))
+);
+const ShieldCheck = lazy(() =>
+  import('lucide-react').then(mod => ({ default: mod.ShieldCheck }))
+);
+const Users = lazy(() =>
+  import('lucide-react').then(mod => ({ default: mod.Users }))
+);
+const Briefcase = lazy(() =>
+  import('lucide-react').then(mod => ({ default: mod.Briefcase }))
+);
+import { lazy } from 'react';
 import ab from '../assets/ab.webp'
 
 export default function OurStory() {
@@ -26,6 +34,8 @@ export default function OurStory() {
   <div className="relative h-[360px]">
     <img
       src={ab}
+        loading="lazy"
+
       alt="Factory consultation"
       className="rounded-2xl w-full h-full object-cover shadow-md"
     />

@@ -1,6 +1,9 @@
+import { useState, lazy, Suspense } from "react";
 import { ArrowRight } from "lucide-react";
-import ContactForm from "./ContactForm";
-import { useState } from "react";
+import { Helmet } from "react-helmet";
+
+// Lazy load ContactForm
+const ContactForm = lazy(() => import("./ContactForm"));
 
 export default function HeroSection() {
   const [showPopup, setShowPopup] = useState(false);

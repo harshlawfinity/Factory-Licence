@@ -95,7 +95,7 @@ const App = () => {
           })}
         </script>
       </Helmet>
-      <Suspense fallback={<div className="text-center py-10 h-screen ">Loading...</div>}>
+      <Suspense fallback={<div className="text-center py-10 h-[100vh] ">Loading...</div>}>
         <HeroSection />
         <SerrvicesGrid />
         <FactoryLicenseSection />

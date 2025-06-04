@@ -1,13 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, lazy, Suspense } from "react";
 import axios from "axios";
-import {
-  FiUser,
-  FiPhone,
-  FiMail,
-  FiMessageSquare,
-  FiKey,
-} from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
+
+// Lazy-load icons
+const FiUser = lazy(() => import("react-icons/fi").then(mod => ({ default: mod.FiUser })));
+const FiPhone = lazy(() => import("react-icons/fi").then(mod => ({ default: mod.FiPhone })));
+const FiMail = lazy(() => import("react-icons/fi").then(mod => ({ default: mod.FiMail })));
+const FiMessageSquare = lazy(() => import("react-icons/fi").then(mod => ({ default: mod.FiMessageSquare })));
+const FiKey = lazy(() => import("react-icons/fi").then(mod => ({ default: mod.FiKey })));
 
 const HeroForm = () => {
   const [formData, setFormData] = useState({
