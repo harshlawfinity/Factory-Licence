@@ -48,7 +48,7 @@ const FactoryLicenseGrid = () => {
     <div className="py-16 px-4 bg-white" aria-label="Factory Licence Services Grid Section">
       {/* 🔹 Helmet SEO + JSON-LD Schema */}
       <Helmet>
-        <title>Factory Licence & Compliance Services | Expert Regulatory Help</title>
+        <title>Factory Licence | Expert Regulatory Help</title>
         <meta
           name="description"
           content="Get expert support for Factory Licence, Labour Law compliance, Fire & Safety, Pollution NOCs, and more. Full documentation & liaison services included."
@@ -57,7 +57,7 @@ const FactoryLicenseGrid = () => {
         <link rel="canonical" href="https://yourdomain.com/factory-licence-services" />
 
         {/* Open Graph */}
-        <meta property="og:title" content="Factory Licence & Compliance Services | Expert Regulatory Help" />
+        <meta property="og:title" content="Factory Licence | Expert Regulatory Help" />
         <meta
           property="og:description"
           content="Get expert support for Factory Licence, Labour Law compliance, Fire & Safety, Pollution NOCs, and more. Full documentation & liaison services included."
@@ -68,7 +68,7 @@ const FactoryLicenseGrid = () => {
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Factory Licence & Compliance Services | Expert Regulatory Help" />
+        <meta name="twitter:title" content="Factory Licence | Expert Regulatory Help" />
         <meta name="twitter:description" content="We handle Factory Licence, Labour Law, NOCs & renewals for your unit." />
         <meta name="twitter:image" content="https://yourdomain.com/path-to-thumbnail.jpg" />
 

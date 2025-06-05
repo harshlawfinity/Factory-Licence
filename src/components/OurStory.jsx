@@ -1,3 +1,4 @@
+import { lazy } from 'react';
 
 const ThumbsUp = lazy(() =>
   import('lucide-react').then(mod => ({ default: mod.ThumbsUp }))
@@ -11,9 +12,8 @@ const Users = lazy(() =>
 const Briefcase = lazy(() =>
   import('lucide-react').then(mod => ({ default: mod.Briefcase }))
 );
-import { lazy } from 'react';
 import ab from '../assets/ab.webp'
-
+ 
 export default function OurStory() {
   return (
     <section className="bg-white py-16 md:px-0 px-4">

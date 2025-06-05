@@ -1,18 +1,61 @@
-import React from "react";
-import {
-  ScrollText,
-  ShieldCheck,
-  BookOpenText,
-  FileWarning,
-  Gavel,
-  HandCoins,
-} from "lucide-react";
+ 
+import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 
 
 const TermsAndConditions = () => {
   return (
     <div className="mt-20">
+      <Helmet>
+  <title>Terms & Conditions | Factory Licence India</title>
+  <meta name="title" content="Terms & Conditions | Factory Licence India" />
+  <meta
+    name="description"
+    content="Review the terms and conditions for using FactoryLicence.in, covering use of services, warranties, limitations, and liabilities."
+  />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://factorylicence.in/terms-conditions" />
+
+  {/* Open Graph */}
+  <meta property="og:title" content="Terms & Conditions | Factory Licence India" />
+  <meta
+    property="og:description"
+    content="Understand the terms and conditions for accessing services provided by FactoryLicence.in including payment, use, and legal jurisdiction."
+  />
+  <meta property="og:url" content="https://factorylicence.in/terms-conditions" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://factorylicence.in/public/fav2.webp" />
+
+  {/* Twitter Card */}
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Terms & Conditions | Factory Licence India" />
+  <meta
+    name="twitter:description"
+    content="Detailed terms and conditions for FactoryLicence.in usage and services. Read before proceeding."
+  />
+  <meta name="twitter:image" content="https://factorylicence.in/public/fav2.webp" />
+
+  {/* Schema Markup */}
+  <script type="application/ld+json">
+    {JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      name: "Terms & Conditions | Factory Licence India",
+      url: "https://factorylicence.in/terms-conditions",
+      description:
+        "This page describes the terms and conditions under which FactoryLicence.in offers its services.",
+      publisher: {
+        "@type": "Organization",
+        name: "LAWFINITY INDIA PRIVATE LIMITED",
+        logo: {
+          "@type": "ImageObject",
+          url: "https://factorylicence.in/public/fav2.webp",
+        },
+      },
+    })}
+  </script>
+</Helmet>
+
       <div>
         <div>
           <div className="bg-gradient-to-br from-[#7A3EF2] to-[#a674f7] text-white py-20 md:py-40 px-">

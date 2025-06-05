@@ -1,8 +1,79 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 
 const RefundCancellation = () => {
   return (
     <div className="mt-20">
+      <Helmet>
+        <title>Refund & Cancellation Policy | Factory Licence India</title>
+        <meta
+          name="title"
+          content="Refund & Cancellation Policy | Factory Licence India"
+        />
+        <meta
+          name="description"
+          content="Learn about FactoryLicence.in’s transparent refund and cancellation policy. Full or partial refunds based on time of request and service progress."
+        />
+        <meta name="robots" content="index, follow" />
+        <link
+          rel="canonical"
+          href="https://factorylicence.in/refund-cancellation"
+        />
+
+        {/* Open Graph */}
+        <meta
+          property="og:title"
+          content="Refund & Cancellation Policy | Factory Licence India"
+        />
+        <meta
+          property="og:description"
+          content="Detailed refund and cancellation policy for services offered by FactoryLicence.in. Fair and transparent terms to protect clients."
+        />
+        <meta
+          property="og:url"
+          content="https://factorylicence.in/refund-cancellation"
+        />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:image"
+          content="https://factorylicence.in/public/fav2.webp"
+        />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Refund & Cancellation Policy | Factory Licence India"
+        />
+        <meta
+          name="twitter:description"
+          content="Understand how refunds are handled at FactoryLicence.in. Our policy supports client flexibility and service integrity."
+        />
+        <meta
+          name="twitter:image"
+          content="https://factorylicence.in/public/fav2.webp"
+        />
+
+        {/* Schema Markup */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            name: "Refund & Cancellation Policy | Factory Licence India",
+            url: "https://factorylicence.in/refund-cancellation",
+            description:
+              "FactoryLicence.in outlines a fair and transparent refund policy based on service progress and cancellation timing.",
+            publisher: {
+              "@type": "Organization",
+              name: "LAWFINITY INDIA PRIVATE LIMITED",
+              logo: {
+                "@type": "ImageObject",
+                url: "https://factorylicence.in/public/fav2.webp",
+              },
+            },
+          })}
+        </script>
+      </Helmet>
       <div>
         <div className="bg-gradient-to-br from-[#7A3EF2] to-[#a674f7] text-white md:py-40 py-20 md:px-0 px-4">
           <div className="max-w-7xl mx-auto">

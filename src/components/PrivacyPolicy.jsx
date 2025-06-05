@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Helmet } from "react-helmet";
 
 export default function PrivacyPolicy() {
   useEffect(() => {
@@ -7,6 +8,74 @@ export default function PrivacyPolicy() {
 
   return (
     <div className="mt-20">
+      <Helmet>
+  {/* Page Title */}
+  <title>Privacy Policy | Factory Licence India</title>
+
+  {/* Meta Tags */}
+  <meta
+    name="title"
+    content="Privacy Policy | Factory Licence India"
+  />
+  <meta
+    name="description"
+    content="Read the privacy policy of FactoryLicence.in to understand how we collect, use, and protect your information while using our services."
+  />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://factorylicence.in/privacy-policy" />
+
+  {/* Open Graph (for social sharing) */}
+  <meta
+    property="og:title"
+    content="Privacy Policy | Factory Licence India"
+  />
+  <meta
+    property="og:description"
+    content="Details on how FactoryLicence.in collects and protects user data while providing compliance services."
+  />
+  <meta property="og:url" content="https://factorylicence.in/privacy-policy" />
+  <meta property="og:type" content="website" />
+  <meta
+    property="og:image"
+    content="https://factorylicence.in/public/fav2.webp"
+  />
+
+  {/* Twitter Card */}
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta
+    name="twitter:title"
+    content="Privacy Policy | Factory Licence India"
+  />
+  <meta
+    name="twitter:description"
+    content="Review our privacy policy to learn how we protect your personal information while using FactoryLicence.in."
+  />
+  <meta
+    name="twitter:image"
+    content="https://factorylicence.in/public/fav2.webp"
+  />
+
+  {/* Schema Markup (JSON-LD) */}
+  <script type="application/ld+json">
+    {JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      name: "Privacy Policy | Factory Licence India",
+      url: "https://factorylicence.in/privacy-policy",
+      description:
+        "Privacy policy of FactoryLicence.in outlining data usage, cookies, and user data protection practices.",
+      publisher: {
+        "@type": "Organization",
+        name: "LAWFINITY INDIA PRIVATE LIMITED",
+        logo: {
+          "@type": "ImageObject",
+          url: "https://factorylicence.in/public/fav2.webp"
+        }
+      }
+    })}
+  </script>
+</Helmet>
+
       <div>
         <div className="bg-gradient-to-br from-[#7A3EF2] to-[#a674f7] text-white md:py-40 py-20 md:px-0 px-4">
           <div className="max-w-7xl mx-auto">

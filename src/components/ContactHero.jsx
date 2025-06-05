@@ -39,7 +39,7 @@ export default function ContactUs() {
 <div className="mt-10 grid md:grid-cols-2 grid-cols-1 gap-6 text-gray-700">
   {/* Location 1 */}
   <div>
-    <h4 className="font-semibold">Noida Office</h4>
+    <h4 className="font-extrabold">Noida Office</h4>
     <p className="mt-2 text-sm">
       Coco County, Plot No. GH-03 C, Sector-10, Greater Noida West, Uttar Pradesh 201309
     </p>
@@ -50,7 +50,7 @@ export default function ContactUs() {
 
   {/* Location 2 */}
   <div>
-    <h4 className="font-semibold">Gurugram Office</h4>
+    <h4 className="font-extrabold">Gurugram Office</h4>
     <p className="mt-2 text-sm">
  GLS Avenue 51. Sector 92 Gurgaon 122505.
      </p>
@@ -61,7 +61,7 @@ export default function ContactUs() {
 
   {/* Location 3 */}
   <div>
-    <h4 className="font-semibold">Delhi   Office</h4>
+    <h4 className="font-extrabold">Delhi   Office</h4>
     <p className="mt-2 text-sm">
 T-10, Plot No. -7, 3rd Floor, Pankaj Plaza, Pocket-7, Sector-12, Dwarka, New Delhi - 110078
     </p>
@@ -70,7 +70,7 @@ T-10, Plot No. -7, 3rd Floor, Pankaj Plaza, Pocket-7, Sector-12, Dwarka, New Del
     </p>
   </div>
   <div>
-    <h4 className="font-semibold">Lucknow Office</h4>
+    <h4 className="font-extrabold">Lucknow Office</h4>
     <p className="mt-2 text-sm">
 CP-53, near Engineering College Chauraha, near CNG Petrol Pump, Lucknow, Uttar Pradesh 226021    </p>
     <p className="text-sm mt-2">

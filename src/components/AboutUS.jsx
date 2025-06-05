@@ -1,12 +1,12 @@
 import React, { lazy, Suspense } from 'react';
 import { Helmet } from 'react-helmet';
-import AboutHero from './AboutHero.jsx'; // Load first for LCP
 
 const NewAbout = lazy(() => import('./NewAbout.jsx'));
 const WhyChooseUs = lazy(() => import('./WhyChooseUs.jsx'));
 const OurStory = lazy(() => import('./OurStory.jsx'));
 const HowItWorks = lazy(() => import('./HowItWorks.jsx'));
 const FinalCTA = lazy(() => import('./FinalCTA.jsx'));
+import AboutHero from './AboutHero.jsx'; // Load first for LCP
 
 const AboutUS = () => {
   return (
@@ -67,7 +67,7 @@ const AboutUS = () => {
       <AboutHero />
 
       {/* Lazy load other sections */}
-      <Suspense fallback={<div className="text-center py-10">Loading...</div>}>
+      <Suspense fallback={<div className="text-center text-white py-10">Loading...</div>}>
         <NewAbout />
         <WhyChooseUs />
         <OurStory />

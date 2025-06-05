@@ -6,6 +6,8 @@ import compression from "vite-plugin-compression";
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss(), imagetools(), compression()],
+    base: '/',
+
     assetsInclude: ['**/*.webp', '**/*.avif'],
 
 });

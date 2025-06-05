@@ -44,6 +44,8 @@ const HeroSection = () => {
               government regulations.
             </p>
 
+
+
             <div className="flex flex-col sm:flex-row gap-4">
               <button
                 onClick={() => setShowPopup(true)}
@@ -52,11 +54,14 @@ const HeroSection = () => {
                 Get Started
               </button>
             </div>
+
+            <h1 className="hidden">Get Your Factory Licence – Fast, Simple & Compliant</h1>
+
           </article>
 
           {/* Right Video Section */}
           <figure className="w-full lg:w-1/2">
-            <div className="relative w-full pb-[56.25%] overflow-hidden rounded-lg bg-black">
+            {/* <div className="relative w-full pb-[56.25%] overflow-hidden rounded-lg bg-black">
               {!loadVideo ? (
                 <>
                   <img
@@ -85,7 +90,7 @@ const HeroSection = () => {
                   frameBorder="0"
                 />
               )}
-            </div>
+            </div> */}
           </figure>
         </div>
       </main>
