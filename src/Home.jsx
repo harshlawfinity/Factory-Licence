@@ -1,4 +1,5 @@
 import React, { Suspense, lazy } from "react";
+import { useInView } from 'react-intersection-observer';
 
 const HeroSection = lazy(() => import("./components/HeroSection"));
 const SerrvicesGrid = lazy(() => import("./components/SerrvicesGrid"));
@@ -19,6 +20,14 @@ const FaqSection = lazy(() => import("./components/FaqSection"));
 import { Helmet } from "react-helmet";
 
 const App = () => {
+ const [servicesRef, servicesInView] = useInView({ triggerOnce: true });
+  const [factoryRef, factoryInView] = useInView({ triggerOnce: true });
+  const [statsRef, statsInView] = useInView({ triggerOnce: true });
+  const [featuresRef, featuresInView] = useInView({ triggerOnce: true });
+  const [assistRef, assistInView] = useInView({ triggerOnce: true });
+  const [testimonialRef, testimonialInView] = useInView({ triggerOnce: true });
+  const [ctaRef, ctaInView] = useInView({ triggerOnce: true });
+  const [faqRef, faqInView] = useInView({ triggerOnce: true });
   return (
     <div className="">
       {/* 🔹 Helmet: SEO Meta Tags and Schema */}
@@ -95,18 +104,76 @@ const App = () => {
           })}
         </script>
       </Helmet>
-      <Suspense fallback={<div className="text-center py-10 h-[100vh] ">Loading...</div>}>
+      {/* 🔹 Hero Section (now lazy + in view logic removed to load early) */}
+      <Suspense fallback={<div className="text-center py-10 h-[100vh]">Loading...</div>}>
         <HeroSection />
-        <SerrvicesGrid />
-        <FactoryLicenseSection />
-        <StatsCard />
-        <FeatureCard />
-        <AssistanceSection />
-        <TestimonialCarousel />
-        <CallToActionSection />
-        <FaqSection />
       </Suspense>
-    </div>
+
+      {/* 🔹 Below-the-fold lazy sections */}
+      <div ref={servicesRef}>
+        {servicesInView && (
+          <Suspense fallback={<div className="py-10">Loading Services...</div>}>
+            <SerrvicesGrid />
+          </Suspense>
+        )}
+      </div>
+
+      <div ref={factoryRef}>
+        {factoryInView && (
+          <Suspense fallback={<div className="py-10">Loading Factory Info...</div>}>
+            <FactoryLicenseSection />
+          </Suspense>
+        )}
+      </div>
+
+      <div ref={statsRef}>
+        {statsInView && (
+          <Suspense fallback={<div className="py-10">Loading Stats...</div>}>
+            <StatsCard />
+          </Suspense>
+        )}
+      </div>
+
+      <div ref={featuresRef}>
+        {featuresInView && (
+          <Suspense fallback={<div className="py-10">Loading Features...</div>}>
+            <FeatureCard />
+          </Suspense>
+        )}
+      </div>
+
+      <div ref={assistRef}>
+        {assistInView && (
+          <Suspense fallback={<div className="py-10">Loading Assistance...</div>}>
+            <AssistanceSection />
+          </Suspense>
+        )}
+      </div>
+
+      <div ref={testimonialRef}>
+        {testimonialInView && (
+          <Suspense fallback={<div className="py-10">Loading Testimonials...</div>}>
+            <TestimonialCarousel />
+          </Suspense>
+        )}
+      </div>
+
+      <div ref={ctaRef}>
+        {ctaInView && (
+          <Suspense fallback={<div className="py-10">Loading Call To Action...</div>}>
+            <CallToActionSection />
+          </Suspense>
+        )}
+      </div>
+
+      <div ref={faqRef}>
+        {faqInView && (
+          <Suspense fallback={<div className="py-10">Loading FAQs...</div>}>
+            <FaqSection />
+          </Suspense>
+        )}
+      </div>
+     </div>
   );
 };
 

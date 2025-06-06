@@ -28,15 +28,14 @@ const HeroSection = () => {
           {/* Left Text Block */}
           <article className="text-white w-full lg:w-1/2">
             {/* Shimmer Placeholder */}
-            {!hydrated ? (
-              <div className="h-[140px] w-full rounded-md mb-6 shimmer" />
-            ) : (
+            
+              
               <p className="md:text-5xl text-4xl capitalize font-semibold mb-6">
                 From Paperwork To Permit
                  
                 factory licence done right
               </p>
-            )}
+      
 
             <p className="text-sm sm:text-xl mb-6 sm:mb-8">
               Whether you're setting up a new manufacturing unit or updating an
@@ -61,11 +60,11 @@ const HeroSection = () => {
 
           {/* Right Video Section */}
           <figure className="w-full lg:w-1/2">
-            {/* <div className="relative w-full pb-[56.25%] overflow-hidden rounded-lg bg-black">
+            <div className="relative w-full pb-[56.25%] overflow-hidden rounded-lg bg-black">
               {!loadVideo ? (
                 <>
                   <img
-                    src="https://img.youtube.com/vi/uaSlyiFVhSw/hqdefault.jpg"
+                    src=""
                     alt="Factory Licence Walkthrough Thumbnail"
                     className="absolute top-0 left-0 w-full h-full object-cover"
                     loading="lazy"
@@ -83,14 +82,14 @@ const HeroSection = () => {
               ) : (
                 <iframe
                   className="absolute top-0 left-0 w-full h-full"
-                  src="https://www.youtube-nocookie.com/embed/uaSlyiFVhSw?autoplay=1&mute=1&controls=1"
+                  src="https://www.youtube.com/embed/AZsh13Zb-PQ?si=DeKzL5AblQ_g0P85"
                   title="Factory Licence Walkthrough"
                   allow="autoplay; encrypted-media"
                   allowFullScreen
                   frameBorder="0"
                 />
               )}
-            </div> */}
+            </div>
           </figure>
         </div>
       </main>
