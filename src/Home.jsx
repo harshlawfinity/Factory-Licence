@@ -105,14 +105,14 @@ const App = () => {
         </script>
       </Helmet>
       {/* 🔹 Hero Section (now lazy + in view logic removed to load early) */}
-      <Suspense fallback={<div className="text-center py-10 h-[100vh]">Loading...</div>}>
+      <Suspense fallback={<div className="text-center py-10 text-white h-[100vh]">Loading...</div>}>
         <HeroSection />
       </Suspense>
 
       {/* 🔹 Below-the-fold lazy sections */}
       <div ref={servicesRef}>
         {servicesInView && (
-          <Suspense fallback={<div className="py-10">Loading Services...</div>}>
+          <Suspense fallback={<div className="text-white py-10">Loading Services...</div>}>
             <SerrvicesGrid />
           </Suspense>
         )}
@@ -120,7 +120,7 @@ const App = () => {
 
       <div ref={factoryRef}>
         {factoryInView && (
-          <Suspense fallback={<div className="py-10">Loading Factory Info...</div>}>
+          <Suspense fallback={<div className="text-white py-10">Loading Factory Info...</div>}>
             <FactoryLicenseSection />
           </Suspense>
         )}
@@ -128,7 +128,7 @@ const App = () => {
 
       <div ref={statsRef}>
         {statsInView && (
-          <Suspense fallback={<div className="py-10">Loading Stats...</div>}>
+          <Suspense fallback={<div className="text-white py-10">Loading Stats...</div>}>
             <StatsCard />
           </Suspense>
         )}
@@ -136,7 +136,7 @@ const App = () => {
 
       <div ref={featuresRef}>
         {featuresInView && (
-          <Suspense fallback={<div className="py-10">Loading Features...</div>}>
+          <Suspense fallback={<div className="text-white py-10">Loading Features...</div>}>
             <FeatureCard />
           </Suspense>
         )}
@@ -144,7 +144,7 @@ const App = () => {
 
       <div ref={assistRef}>
         {assistInView && (
-          <Suspense fallback={<div className="py-10">Loading Assistance...</div>}>
+          <Suspense fallback={<div className="text-white py-10">Loading Assistance...</div>}>
             <AssistanceSection />
           </Suspense>
         )}
@@ -152,7 +152,7 @@ const App = () => {
 
       <div ref={testimonialRef}>
         {testimonialInView && (
-          <Suspense fallback={<div className="py-10">Loading Testimonials...</div>}>
+          <Suspense fallback={<div className="text-white py-10">Loading Testimonials...</div>}>
             <TestimonialCarousel />
           </Suspense>
         )}
@@ -160,7 +160,7 @@ const App = () => {
 
       <div ref={ctaRef}>
         {ctaInView && (
-          <Suspense fallback={<div className="py-10">Loading Call To Action...</div>}>
+          <Suspense fallback={<div className="text-white py-10">Loading Call To Action...</div>}>
             <CallToActionSection />
           </Suspense>
         )}
@@ -168,7 +168,7 @@ const App = () => {
 
       <div ref={faqRef}>
         {faqInView && (
-          <Suspense fallback={<div className="py-10">Loading FAQs...</div>}>
+          <Suspense fallback={<div className="text-white py-10">Loading FAQs...</div>}>
             <FaqSection />
           </Suspense>
         )}

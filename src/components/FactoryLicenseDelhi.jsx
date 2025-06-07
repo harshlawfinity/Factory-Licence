@@ -1,14 +1,32 @@
 import React, { lazy, Suspense, useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
-const FaIndustry = lazy(() => import("react-icons/fa").then(mod => ({ default: mod.FaIndustry })));
-const FaQuestionCircle = lazy(() => import("react-icons/fa").then(mod => ({ default: mod.FaQuestionCircle })));
-const FaCheckCircle = lazy(() => import("react-icons/fa").then(mod => ({ default: mod.FaCheckCircle })));
-const FaUserCheck = lazy(() => import("react-icons/fa").then(mod => ({ default: mod.FaUserCheck })));
-const FaFileAlt = lazy(() => import("react-icons/fa").then(mod => ({ default: mod.FaFileAlt })));
-const FaListOl = lazy(() => import("react-icons/fa").then(mod => ({ default: mod.FaListOl })));
-const FaClock = lazy(() => import("react-icons/fa").then(mod => ({ default: mod.FaClock })));
-const FaExclamationTriangle = lazy(() => import("react-icons/fa").then(mod => ({ default: mod.FaExclamationTriangle })));
-import ddddd from '../assets/ddddd.webp'
+const FaIndustry = lazy(() =>
+  import("react-icons/fa").then((mod) => ({ default: mod.FaIndustry }))
+);
+const FaQuestionCircle = lazy(() =>
+  import("react-icons/fa").then((mod) => ({ default: mod.FaQuestionCircle }))
+);
+const FaCheckCircle = lazy(() =>
+  import("react-icons/fa").then((mod) => ({ default: mod.FaCheckCircle }))
+);
+const FaUserCheck = lazy(() =>
+  import("react-icons/fa").then((mod) => ({ default: mod.FaUserCheck }))
+);
+const FaFileAlt = lazy(() =>
+  import("react-icons/fa").then((mod) => ({ default: mod.FaFileAlt }))
+);
+const FaListOl = lazy(() =>
+  import("react-icons/fa").then((mod) => ({ default: mod.FaListOl }))
+);
+const FaClock = lazy(() =>
+  import("react-icons/fa").then((mod) => ({ default: mod.FaClock }))
+);
+const FaExclamationTriangle = lazy(() =>
+  import("react-icons/fa").then((mod) => ({
+    default: mod.FaExclamationTriangle,
+  }))
+);
+import ddddd from "../assets/ddddd.webp";
 
 import dmap from "../assets/del.webp";
 const ContactForm = lazy(() => import("./ContactForm"));
@@ -22,6 +40,7 @@ export default function FactoryLicenceDelhiPage() {
   const [showPopup, setShowPopup] = useState(false);
   const heroBackgrounds = [bg1, bg2, bg3];
   const [currentBg, setCurrentBg] = useState(0);
+  const [loadVideo, setLoadVideo] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -114,9 +133,7 @@ export default function FactoryLicenceDelhiPage() {
           {heroBackgrounds.map((img, index) => (
             <img
               loading="lazy"
-
               key={index}
- 
               src={img}
               alt={`bg-${index}`}
               className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${
@@ -128,36 +145,34 @@ export default function FactoryLicenceDelhiPage() {
         </div>
 
         {/* Hero Content */}
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-center relative z-20">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-10 md:px-0  md:py-12 relative z-20">
+          {/* Left Content */}
           <div className="md:w-1/2">
-            <h1 className="text-4xl md:text-5xl font-semibold mb-6">
+            <h1 className="text-4xl md:text-5xl font-semibold md:mb-6 mb-2">
               Factory Licence Registration in Delhi
             </h1>
-            <p className="text-lg mb-8">
+            <p className="text-lg md:mb-6 mb-4 text-justify text-gray-50">
               Ensure compliance and legal security for your manufacturing unit
               in Delhi with our expert licensing assistance.
             </p>
             <button
               onClick={() => setShowPopup(true)}
-              className="bg-white text-[#7A3EF2] font-semibold px-6 py-3 rounded-full hover:bg-gray-100 transition"
+              className="bg-white text-[#7A3EF2] font-semibold px-6 py-3 rounded-full shadow hover:bg-gray-100 transition"
             >
               Get Started
             </button>
           </div>
-          <div className="md:w-1/2 mt-10 md:mt-0 flex justify-end">
-            <div className="w-full max-w-md aspect-[4/3] relative">
-              <img
-                loading="lazy"
 
-                src={dmap}
-                  loading="lazy"
-
-                alt="Factory Licence Delhi"
-                width={600}
-                height={450}
-                className="absolute top-0 left-0 w-full h-full object-contain z-20"
-                loading="lazy"
-                decoding="async"
+          {/* Right Video Section */}
+          <div className="md:w-1/2 w-full">
+            <div className="relative w-full md:h-[350px] overflow-hidden rounded-lg bg-black flex flex-col items-center justify-end bg-[#7A3EF2]  w-full  ">
+              <iframe
+                className="  w-full md:h-[350px] h-[200px]"
+                src="https://www.youtube.com/embed/AZsh13Zb-PQ?si=DeKzL5AblQ_g0P85"
+                title="Factory Licence Walkthrough"
+                allow="autoplay; encrypted-media"
+                allowFullScreen
+                frameBorder="0"
               />
             </div>
           </div>
@@ -287,13 +302,25 @@ export default function FactoryLicenceDelhiPage() {
           >
             <ul className="list-disc pl-6 space-y-2 text-gray-800">
               <li className="text-justify ">Building Plan Approval</li>
-              <li className="text-justify ">Layout Plan as per Factories Act</li>
-              <li className="text-justify ">KYC Documents of Owners/Directors</li>
-              <li className="text-justify ">Business Registration documents of firm/company</li>
-              <li className="text-justify ">Sale Deed/ Rent Agreement of premises.</li>
-              <li className="text-justify ">Sanctioned load from HVPNL / Latest Electricity Bill</li>
+              <li className="text-justify ">
+                Layout Plan as per Factories Act
+              </li>
+              <li className="text-justify ">
+                KYC Documents of Owners/Directors
+              </li>
+              <li className="text-justify ">
+                Business Registration documents of firm/company
+              </li>
+              <li className="text-justify ">
+                Sale Deed/ Rent Agreement of premises.
+              </li>
+              <li className="text-justify ">
+                Sanctioned load from HVPNL / Latest Electricity Bill
+              </li>
               <li className="text-justify ">DPCC NOC</li>
-              <li className="text-justify ">Fire NOC (for premises above 250 sq metre)</li>
+              <li className="text-justify ">
+                Fire NOC (for premises above 250 sq metre)
+              </li>
               <li className="text-justify ">Property Tax Receipt</li>
             </ul>
           </Section>
@@ -320,7 +347,9 @@ export default function FactoryLicenceDelhiPage() {
                 Form Submission: Fill out the application form and upload
                 necessary documents.
               </li>
-              <li className="text-justify ">Fee Payment: Pay the prescribed licence fee online.</li>
+              <li className="text-justify ">
+                Fee Payment: Pay the prescribed licence fee online.
+              </li>
               <li className="text-justify ">
                 Inspection: Await inspection by the concerned authorities.
               </li>
@@ -333,8 +362,10 @@ export default function FactoryLicenceDelhiPage() {
 
           <img
             loading="lazy"
- src={ddddd} alt="Factoy Licence In Delhi Steps"   loading="lazy"
- />
+            src={ddddd}
+            alt="Factoy Licence In Delhi Steps"
+            loading="lazy"
+          />
 
           <Section
             id="timelines"

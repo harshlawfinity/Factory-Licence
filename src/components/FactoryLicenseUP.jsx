@@ -147,33 +147,34 @@ export default function FactoryLicenceUttarPradeshPage() {
         </div>
 
         {/* Hero Content */}
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-center relative z-20">
+         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-10 md:px-0  md:py-12 relative z-20">
+          {/* Left Content */}
           <div className="md:w-1/2">
-            <h1 className="text-4xl md:text-5xl font-semibold mb-6">
+            <h1 className="text-4xl md:text-5xl font-semibold md:mb-6 mb-2">
               Factory Licence Registration in Uttar Pradesh
             </h1>
-            <p className="text-lg mb-8">
+            <p className="text-lg md:mb-6 mb-4 text-justify text-gray-50">
               Ensure compliance and legal security for your manufacturing unit
               in Uttar Pradesh with our expert licensing assistance.
             </p>
             <button
               onClick={() => setShowPopup(true)}
-              className="bg-white text-[#7A3EF2] font-semibold px-6 py-3 rounded-full hover:bg-gray-100 transition"
+              className="bg-white text-[#7A3EF2] font-semibold px-6 py-3 rounded-full shadow hover:bg-gray-100 transition"
             >
               Get Started
             </button>
           </div>
-          <div className="md:w-1/2 mt-10 md:mt-0 flex justify-end">
-            <div className="w-full max-w-md aspect-[4/3] relative">
-              <img
-                loading="lazy"
-                src={dmap}
-                alt="Factory Licence Uttar Pradesh"
-                width={600}
-                height={450}
-                className="absolute top-0 left-0 w-full h-full object-contain z-20"
-                loading="lazy"
-                decoding="async"
+
+          {/* Right Video Section */}
+          <div className="md:w-1/2 w-full">
+            <div className="relative w-full md:h-[350px] overflow-hidden rounded-lg bg-black flex flex-col items-center justify-end bg-[#7A3EF2]  w-full  ">
+              <iframe
+                className="  w-full md:h-[350px] h-[200px]"
+                src="https://www.youtube.com/embed/AZsh13Zb-PQ?si=DeKzL5AblQ_g0P85"
+                title="Factory Licence Walkthrough"
+                allow="autoplay; encrypted-media"
+                allowFullScreen
+                frameBorder="0"
               />
             </div>
           </div>

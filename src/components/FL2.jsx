@@ -23,7 +23,7 @@ const FL = () => {
   }, [startAnimation]);
 
   return (
-    <div className="relative w-[215px] h-[60px] overflow-hidden flex items-center justify-start">
+    <div className="relative w-[222px] h-[60px] overflow-hidden flex items-center justify-start">
       {/* Sliding GIF (appears after 3s) */}
       {startAnimation && (
         <div

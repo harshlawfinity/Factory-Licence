@@ -25,8 +25,7 @@ export default defineConfig({
     rollupOptions: {
       treeshake: true,
     },
-    minify: "esbuild", // or 'terser'
-    target: "es2015",
+    
   },
 
   assetsInclude: ["**/*.webp", "**/*.avif"],

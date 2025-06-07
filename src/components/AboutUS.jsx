@@ -67,7 +67,7 @@ const AboutUS = () => {
       <AboutHero />
 
       {/* Lazy load other sections */}
-      <Suspense fallback={<div className="text-center text-white py-10">Loading...</div>}>
+      <Suspense fallback={<div className="text-center text-white text-white py-10">Loading...</div>}>
         <NewAbout />
         <WhyChooseUs />
         <OurStory />
