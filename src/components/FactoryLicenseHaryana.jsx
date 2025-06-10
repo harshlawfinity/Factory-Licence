@@ -1,16 +1,41 @@
 import React, { lazy, useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
-const FaIndustry = lazy(() => import("react-icons/fa").then(mod => ({ default: mod.FaIndustry })));
-const FaQuestionCircle = lazy(() => import("react-icons/fa").then(mod => ({ default: mod.FaQuestionCircle })));
-const FaCheckCircle = lazy(() => import("react-icons/fa").then(mod => ({ default: mod.FaCheckCircle })));
-const FaUserCheck = lazy(() => import("react-icons/fa").then(mod => ({ default: mod.FaUserCheck })));
-const FaFileAlt = lazy(() => import("react-icons/fa").then(mod => ({ default: mod.FaFileAlt })));
-const FaListOl = lazy(() => import("react-icons/fa").then(mod => ({ default: mod.FaListOl })));
-const FaClock = lazy(() => import("react-icons/fa").then(mod => ({ default: mod.FaClock })));
-const FaExclamationTriangle = lazy(() => import("react-icons/fa").then(mod => ({ default: mod.FaExclamationTriangle })));
-import hhhhh from '../assets/hhhhh.webp'
 
-import dmap from "../assets/harayanamap.webp";
+const FaIndustry = lazy(() =>
+  import("react-icons/fa").then((mod) => ({ default: mod.FaIndustry }))
+);
+const FaQuestionCircle = lazy(() =>
+  import("react-icons/fa").then((mod) => ({ default: mod.FaQuestionCircle }))
+);
+const FaCheckCircle = lazy(() =>
+  import("react-icons/fa").then((mod) => ({ default: mod.FaCheckCircle }))
+);
+const FaUserCheck = lazy(() =>
+  import("react-icons/fa").then((mod) => ({ default: mod.FaUserCheck }))
+);
+const FaFileAlt = lazy(() =>
+  import("react-icons/fa").then((mod) => ({ default: mod.FaFileAlt }))
+);
+const FaListOl = lazy(() =>
+  import("react-icons/fa").then((mod) => ({ default: mod.FaListOl }))
+);
+const FaClock = lazy(() =>
+  import("react-icons/fa").then((mod) => ({ default: mod.FaClock }))
+);
+const FaExclamationTriangle = lazy(() =>
+  import("react-icons/fa").then((mod) => ({
+    default: mod.FaExclamationTriangle,
+  }))
+);
+import hhhhh from "../assets/hhhhh.webp";
+import { HiOfficeBuilding } from "react-icons/hi";
+import { RiTimeLine } from "react-icons/ri";
+import { AiOutlineEdit } from "react-icons/ai";
+import TH from "./TH";
+
+import { Table, Thead, Tbody, Tr, Th, Td } from "react-super-responsive-table";
+import "react-super-responsive-table/dist/SuperResponsiveTableStyle.css";
+
 const ContactForm = React.lazy(() => import("./ContactForm"));
 import { Link } from "react-scroll"; // use this for smooth scroll
 import bg1 from "../assets/f1.webp";
@@ -97,7 +122,7 @@ export default function FactoryLicenceHaryanaPage() {
         </div>
 
         {/* Hero Content */}
-         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-10 md:px-0  md:py-12 relative z-20">
+        <div className=" max-w-7xl   mx-auto flex flex-col md:flex-row items-center justify-between gap-10 md:px-0  md:py-12 relative z-20">
           {/* Left Content */}
           <div className="md:w-1/2">
             <h1 className="text-4xl md:text-5xl font-semibold md:mb-6 mb-2">
@@ -120,7 +145,7 @@ export default function FactoryLicenceHaryanaPage() {
             <div className="relative w-full md:h-[350px] overflow-hidden rounded-lg bg-black flex flex-col items-center justify-end bg-[#7A3EF2]  w-full  ">
               <iframe
                 className="  w-full md:h-[350px] h-[200px]"
-                src="https://www.youtube.com/embed/AZsh13Zb-PQ?si=DeKzL5AblQ_g0P85"
+                src="https://www.youtube.com/embed/AZsh13Zb-PQ?rel=0"
                 title="Factory Licence Walkthrough"
                 allow="autoplay; encrypted-media"
                 allowFullScreen
@@ -132,7 +157,7 @@ export default function FactoryLicenceHaryanaPage() {
       </section>
 
       {/* Main Content */}
-      <section className="max-w-7xl mx-auto py-16 md:px-0 px-4 grid md:grid-cols-4 gap-10 text-gray-800 relative">
+      <section className="max-w-7xl  mx-auto py-16 md:px-0 px-4 grid md:grid-cols-4 gap-10 text-gray-800 relative">
         {/* Left Side Content */}
         <div className="md:col-span-3 space-y-14">
           <Section
@@ -254,13 +279,72 @@ export default function FactoryLicenceHaryanaPage() {
           >
             <ul className="list-disc pl-6 space-y-2 text-gray-800">
               <li className="text-justify ">Building Plan Approval</li>
-              <li className="text-justify ">Layout Plan as per Factories Act</li>
-              <li className="text-justify ">KYC Documents of Owners/Directors</li>
-              <li className="text-justify ">Business Registration documents of firm/company</li>
-              <li className="text-justify ">Sale Deed/ Rent Agreement of premises.</li>
-              <li className="text-justify ">Sanctioned load from HVPNL / Latest Electricity Bill</li>
+              <li className="text-justify ">
+                Layout Plan as per Factories Act
+              </li>
+              <li className="text-justify ">
+                KYC Documents of Owners/Directors
+              </li>
+              <li className="text-justify ">
+                Business Registration documents of firm/company
+              </li>
+              <li className="text-justify ">
+                Sale Deed/ Rent Agreement of premises.
+              </li>
+              <li className="text-justify ">
+                Sanctioned load from HVPNL / Latest Electricity Bill
+              </li>
             </ul>
           </Section>
+
+          <section className="p max-w-7xl mx-auto overflow-hidden" id="fee">
+            <h2 className="text-3xl font-semibold flex items-center gap-2 mb-4 text-[#7c4bdf]">
+              <HiOfficeBuilding className="text-[#7c4bdf]" />
+              Fee Structure
+            </h2>
+            <div className="md:w-full w-[90vw]">
+              <TH />
+            </div>
+
+            {/* Renewal Fee Section */}
+            <div className="mt-10">
+              <h3 className="text-xl font-semibold text-[#7c4bdf] mb-2 flex items-center gap-2">
+                <RiTimeLine className="text-[#7c4bdf]" />
+                Renewal Fee
+              </h3>
+              <ul className="list-disc list-inside space-y-1 text-gray-700 text-sm">
+                <li>
+                  Haryana follows a HP and manpower based renewal fee structure.
+                  The exact amount may differ depending on the type and size of
+                  the factory.
+                </li>
+                <li>Renewal includes:</li>
+                <ul className="list-disc list-inside pl-4">
+                  <li>Applicable license fees based on HP and manpower.</li>
+                  <li>Processing charges and government treasury fees.</li>
+                  <li className="italic">
+                    Note: Exact renewal charges are disclosed during the
+                    application process on the Haryana Labour Department’s
+                    official portal.
+                  </li>
+                </ul>
+              </ul>
+            </div>
+
+            {/* Amendment Fee Section */}
+            <div className="mt-8">
+              <h3 className="text-xl font-semibold text-[#7c4bdf] mb-2 flex items-center gap-2">
+                <AiOutlineEdit className="text-[#7c4bdf]" />
+                Amendment Fee
+              </h3>
+              <ul className="list-disc list-inside text-sm text-gray-700 space-y-1">
+                <li>
+                  {" "}
+                  ₹100 per change (e.g., change in name, occupier, address).
+                </li>
+              </ul>
+            </div>
+          </section>
 
           <Section
             id="steps"
@@ -376,6 +460,11 @@ export default function FactoryLicenceHaryanaPage() {
                     id: "documents",
                     icon: <FaFileAlt className="inline mr-2" />,
                   },
+                     {
+                                      label: "Fee Structure  ",
+                                      id: "fee",
+                                      icon: <HiOfficeBuilding className="inline mr-2" />,
+                                    },
                   {
                     label: "Steps to Get Licence",
                     id: "steps",

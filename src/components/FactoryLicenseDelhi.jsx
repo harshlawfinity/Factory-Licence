@@ -1,8 +1,14 @@
-import React, { lazy, Suspense, useEffect, useState } from "react";
+import { lazy, Suspense, useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 const FaIndustry = lazy(() =>
   import("react-icons/fa").then((mod) => ({ default: mod.FaIndustry }))
 );
+import { RiTimeLine } from "react-icons/ri";
+import { AiOutlineEdit } from "react-icons/ai";
+import TD from "./TD";
+
+import { HiOfficeBuilding } from "react-icons/hi";
+
 const FaQuestionCircle = lazy(() =>
   import("react-icons/fa").then((mod) => ({ default: mod.FaQuestionCircle }))
 );
@@ -28,7 +34,6 @@ const FaExclamationTriangle = lazy(() =>
 );
 import ddddd from "../assets/ddddd.webp";
 
-import dmap from "../assets/del.webp";
 const ContactForm = lazy(() => import("./ContactForm"));
 import { Link } from "react-scroll"; // use this for smooth scroll
 import bg1 from "../assets/f1.webp";
@@ -40,7 +45,40 @@ export default function FactoryLicenceDelhiPage() {
   const [showPopup, setShowPopup] = useState(false);
   const heroBackgrounds = [bg1, bg2, bg3];
   const [currentBg, setCurrentBg] = useState(0);
-  const [loadVideo, setLoadVideo] = useState(false);
+
+  const feeData = [
+    {
+      hp: "Nil",
+      values: [100, 200, 400, 1000, 1600, 3000, 4000, 5000],
+    },
+    {
+      hp: "Up to 10",
+      values: [200, 400, 480, 1200, 2400, 3600, 4800, 6000],
+    },
+    {
+      hp: "Above 10 and up to 50",
+      values: [400, 600, 800, 2000, 4000, 6000, 8000, 10000],
+    },
+    {
+      hp: "Above 50 and up to 100",
+      values: [800, 1000, 1200, 3000, 6000, 9000, 12000, 15000],
+    },
+    {
+      hp: "Above 100",
+      values: [1200, 1600, 2000, 4000, 8000, 12000, 16000, 20000],
+    },
+  ];
+
+  const workerHeaders = [
+    "Up - 20",
+    "21 - 50",
+    "51 - 100",
+    "101 - 250",
+    "251 - 500",
+    "501 - 750",
+    "751 - 1000",
+    "Above 1000",
+  ];
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -167,8 +205,8 @@ export default function FactoryLicenceDelhiPage() {
           <div className="md:w-1/2 w-full">
             <div className="relative w-full md:h-[350px] overflow-hidden rounded-lg bg-black flex flex-col items-center justify-end bg-[#7A3EF2]  w-full  ">
               <iframe
-                className="  w-full md:h-[350px] h-[200px]"
-                src="https://www.youtube.com/embed/AZsh13Zb-PQ?si=DeKzL5AblQ_g0P85"
+                className="w-full md:h-[350px] h-[200px]"
+                src="https://www.youtube.com/embed/AZsh13Zb-PQ?rel=0"
                 title="Factory Licence Walkthrough"
                 allow="autoplay; encrypted-media"
                 allowFullScreen
@@ -325,6 +363,69 @@ export default function FactoryLicenceDelhiPage() {
             </ul>
           </Section>
 
+          <section className="p max-w-7xl mx-auto" id="fee">
+            <h2 className="text-3xl font-semibold flex mb-4 text-[#7c4bdf]">
+              <HiOfficeBuilding className="text-[#7c4bdf]" />
+              Fee Structure
+            </h2>
+
+            <div className="md:w-full w-[90vw]">
+              <TD />
+            </div>
+
+            {/* Renewal Fee Section */}
+            <div className="mt-10">
+              <h3 className="text-xl font-semibold text-[#7c4bdf] mb-2 flex items-center gap-2">
+                <RiTimeLine className="text-[#7c4bdf]" />
+                Renewal Fee
+              </h3>
+              <ul className="list-disc list-inside space-y-1 text-gray-700 text-sm">
+                <li>
+                  <strong>Within April (grace period):</strong>
+                </li>
+                <ul className="list-disc list-inside pl-4">
+                  <li>License Fee = HP-rate × Total HP</li>
+                  <li>Permission Fee = Unit Charge (₹1000) + License Fee</li>
+                  <li>Processing Fee = 50% of License Fee</li>
+                  <li>Transaction Fee = ₹10</li>
+                  <li>Convenience Fee = 2.5937% of Total Amount</li>
+                </ul>
+
+                <li>
+                  <strong>After April (up to year end):</strong>
+                </li>
+                <ul className="list-disc list-inside pl-4">
+                  <li>
+                    <>Same as above plus:</> Late fee = ₹150 (for first 3
+                    months) + 5% of license fee per additional month
+                  </li>
+                </ul>
+
+                <li>
+                  <strong>Beyond one year:</strong>
+                </li>
+                <ul className="list-disc list-inside pl-4">
+                  <li>Above charges + Arrear = ₹2,000 flat</li>
+                </ul>
+              </ul>
+            </div>
+
+            {/* Amendment Fee Section */}
+            <div className="mt-8">
+              <h3 className="text-xl font-semibold text-[#7c4bdf] mb-2 flex items-center gap-2">
+                <AiOutlineEdit className="text-[#7c4bdf]" />
+                Amendment Fee
+              </h3>
+              <ul className="list-disc list-inside text-sm text-gray-700 space-y-1">
+                <li>Processing Fee = ₹550 + 2.5937% Convenience Fee</li>
+                <li>Registration Charges = Nil</li>
+                <li>
+                  Amendment fee proper: Assessed by MCD officials at approval
+                </li>
+              </ul>
+            </div>
+          </section>
+
           <Section
             id="steps"
             title={
@@ -360,12 +461,7 @@ export default function FactoryLicenceDelhiPage() {
             </ol>
           </Section>
 
-          <img
-            loading="lazy"
-            src={ddddd}
-            alt="Factoy Licence In Delhi Steps"
-            loading="lazy"
-          />
+          <img loading="lazy" src={ddddd} alt="Factoy Licence In Delhi Steps" />
 
           <Section
             id="timelines"
@@ -408,16 +504,6 @@ export default function FactoryLicenceDelhiPage() {
               </li>
             </ul>
           </Section>
-
-          {/* <div className="pt-8">
-            <img
-              loading="lazy"
-
-              src={fl1}
-              alt="Factory Registration Process"
-              className="rounded-lg shadow-md w-full"
-            />
-          </div> */}
         </div>
 
         {/* Right Side Navigation */}
@@ -453,6 +539,11 @@ export default function FactoryLicenceDelhiPage() {
                     label: "Documents Required",
                     id: "documents",
                     icon: <FaFileAlt className="inline mr-2" />,
+                  },
+                  {
+                    label: "Fee Structure  ",
+                    id: "fee",
+                    icon: <HiOfficeBuilding className="inline mr-2" />,
                   },
                   {
                     label: "Steps to Get Licence",
@@ -500,7 +591,8 @@ export default function FactoryLicenceDelhiPage() {
           <div className="bg-white p-6 rounded-lg max-w-md w-full relative shadow-lg">
             <button
               onClick={() => setShowPopup(false)}
-              className="absolute top-2 right-3 text-gray-500 text-2xl"
+              className="absolute top-2 right-3 text-gray-500 text-3xl"
+              semi
               aria-label="Close contact form"
             >
               ×

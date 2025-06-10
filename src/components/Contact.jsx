@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from 'react';
+import  { lazy, Suspense } from 'react';
 import ContactHero from '../components/ContactHero.jsx'; // load early for SEO/LCP
 import { Helmet } from 'react-helmet';
 

@@ -1,10 +1,8 @@
 import { Link } from "react-router-dom";
 import ContactForm from "./ContactForm";
-import { useEffect, useState } from "react";
-
+ 
 export default function CallToActionSection() {
-    const [showPopup, setShowPopup] = useState(false);
-
+ 
   return (
   <div className="bg-gradient-to-b border-2 py-24 text-center text-[#8753F4]">
       <h2 className="text-3xl sm:text-4xl font-bold mb-8">Let's Talk</h2>

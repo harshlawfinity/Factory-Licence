@@ -2,7 +2,7 @@
 
  
 body {
-  font-family: "Poppins", sans-serif;
+font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   font-weight: 400;
   font-style: normal; 
    -webkit-font-smoothing: antialiased;
@@ -24,4 +24,13 @@ body {
   background: linear-gradient(90deg, #f0f0f0 25%, #e4e4e4 50%, #f0f0f0 75%);
   background-size: 800px 100%;
   animation: shimmer 1.5s infinite linear;
+}
+
+/* Optional CSS (global or module) */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

@@ -2,17 +2,52 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/fav2.webp" />
+    <link rel="icon" type="image/webp" href="/fav2.webp" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Factory Licence Services | Paperwork to Permit – Done Right</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
- 
 
+    <!-- Preconnect for Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- ✅ Preload critical woff2 fonts to prevent layout shifts -->
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      href="https://fonts.gstatic.com/s/poppins/v20/pxiByp8kv8JHgFVrFJDUc1NECPY.woff2"
+      crossorigin
+    />
+
+    <link
+      rel="preload"
+      href="https://fonts.gstatic.com/s/poppins/v20/pxiByp8kv8JHgFVrLDz8Z1xlEA.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+
+    <!-- Efficient font loading with font-display swap -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
+
+    <!-- Preload Critical Script -->
+    <link rel="modulepreload" href="/src/main.jsx" />
   </head>
-  <body>
+  <body style="font-family: 'Poppins', system-ui, sans-serif">
     <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+
+    <!-- Defer JavaScript -->
+    <script type="module" src="/src/main.jsx" defer></script>
   </body>
 </html>

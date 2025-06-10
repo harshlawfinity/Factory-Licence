@@ -4,46 +4,47 @@ const ContactForm = lazy(() => import("./ContactForm"));
 
 const HeroSection = () => {
   const [showPopup, setShowPopup] = useState(false);
-  const [loadVideo, setLoadVideo] = useState(false);
-  const [hydrated, setHydrated] = useState(false);
+  const [showVideo, setShowVideo] = useState(false);
+  const [userClicked, setUserClicked] = useState(false);
 
+  // Auto-load iframe 6s after load, only if not already clicked
   useEffect(() => {
+    const onLoad = () => {
+      setTimeout(() => {
+        if (!userClicked) setShowVideo(true);
+      }, 500);
+    };
+
     if (document.readyState === "complete") {
-      setLoadVideo(true);
-      setHydrated(true);
+      onLoad();
     } else {
-      const handleLoad = () => {
-        setLoadVideo(true);
-        setHydrated(true);
-      };
-      window.addEventListener("load", handleLoad);
-      return () => window.removeEventListener("load", handleLoad);
+      window.addEventListener("load", onLoad);
+      return () => window.removeEventListener("load", onLoad);
     }
-  }, []);
+  }, [userClicked]);
+
+  const handlePlayClick = () => {
+    setUserClicked(true);
+    setShowVideo(true);
+  };
 
   return (
-    <section className="relative w-full py-32 mt-20 overflow-hidden bg-[#7c4bdf]">
+    <section className="relative w-full h-[100vh] md:h-[600px] mt-20 overflow-hidden bg-[#7c4bdf]">
       <main className="w-full h-full flex items-center justify-center px-4 sm:px-6">
         <div className="max-w-7xl mx-auto w-full flex flex-col lg:flex-row justify-between items-center gap-8">
-          {/* Left Text Block */}
+          
+          {/* Text Section */}
           <article className="text-white w-full lg:w-1/2">
-            {/* Shimmer Placeholder */}
-            
-              
-              <p className="md:text-5xl text-4xl capitalize font-semibold mb-6">
-                From Paperwork To Permit
-                 
-                factory licence done right
-              </p>
-      
+            <p className="md:text-5xl text-4xl capitalize font-semibold md:mb-6 mb-2">
+              From Paperwork To Permit
+               factory licence done right
+            </p>
 
-            <p className="text-sm sm:text-xl mb-6 sm:mb-8">
+            <p className="text-sm   mb-6 sm:mb-8">
               Whether you're setting up a new manufacturing unit or updating an
               existing one, we ensure your operations are fully compliant with
               government regulations.
             </p>
-
-
 
             <div className="flex flex-col sm:flex-row gap-4">
               <button
@@ -55,25 +56,24 @@ const HeroSection = () => {
             </div>
 
             <h1 className="hidden">Get Your Factory Licence – Fast, Simple & Compliant</h1>
-
           </article>
 
-          {/* Right Video Section */}
+          {/* Video/Image Section */}
           <figure className="w-full lg:w-1/2">
-            <div className="relative w-full pb-[56.25%] overflow-hidden rounded-lg bg-black">
-              {!loadVideo ? (
+            <div className="relative w-full aspect-[16/9] min-h-[200px] bg-black rounded-lg overflow-hidden flex items-center justify-center">
+              {!showVideo ? (
                 <>
                   <img
-                    src=""
-                    alt="Factory Licence Walkthrough Thumbnail"
+                    src="/static/factory-cover.webp"
+                    alt="Factory Licence Video Preview"
                     className="absolute top-0 left-0 w-full h-full object-cover"
-                    loading="lazy"
-                    onClick={() => setLoadVideo(true)}
-                    style={{ cursor: "pointer" }}
+                    loading="eager"
+                    width="1280"
+                    height="720"
                   />
                   <button
-                    onClick={() => setLoadVideo(true)}
-                    className="absolute inset-0 flex items-center justify-center text-white text-xl bg-black/50 z-10"
+                    onClick={handlePlayClick}
+                    className="absolute inset-0 flex items-center justify-center text-white text-xl bg-black/50 z-10 rounded"
                     aria-label="Play video"
                   >
                     ▶ Play Video
@@ -82,7 +82,7 @@ const HeroSection = () => {
               ) : (
                 <iframe
                   className="absolute top-0 left-0 w-full h-full"
-                  src="https://www.youtube.com/embed/AZsh13Zb-PQ?si=DeKzL5AblQ_g0P85"
+                  src="https://www.youtube.com/embed/AZsh13Zb-PQ?autoplay=1&rel=0"
                   title="Factory Licence Walkthrough"
                   allow="autoplay; encrypted-media"
                   allowFullScreen
@@ -94,7 +94,7 @@ const HeroSection = () => {
         </div>
       </main>
 
-      {/* Contact Popup */}
+      {/* Contact Form Modal */}
       {showPopup && (
         <div
           className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center px-4"

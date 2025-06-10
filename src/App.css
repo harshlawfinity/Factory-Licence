@@ -11,3 +11,11 @@
   background-size: 800px 100%;
   animation: shimmer 1.5s infinite linear;
 }
+/* Optional CSS (global or module) */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

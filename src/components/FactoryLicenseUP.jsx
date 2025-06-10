@@ -2,6 +2,11 @@ import React, { lazy, useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 
 import uuu from "../assets/uuu.webp";
+import { RiTimeLine } from "react-icons/ri";
+import { AiOutlineEdit } from "react-icons/ai";
+import TUP from "./TUP.jsx";
+
+import { HiOfficeBuilding } from "react-icons/hi";
 
 const FaIndustry = lazy(() =>
   import("react-icons/fa").then((mod) => ({ default: mod.FaIndustry }))
@@ -170,7 +175,7 @@ export default function FactoryLicenceUttarPradeshPage() {
             <div className="relative w-full md:h-[350px] overflow-hidden rounded-lg bg-black flex flex-col items-center justify-end bg-[#7A3EF2]  w-full  ">
               <iframe
                 className="  w-full md:h-[350px] h-[200px]"
-                src="https://www.youtube.com/embed/AZsh13Zb-PQ?si=DeKzL5AblQ_g0P85"
+                src="https://www.youtube.com/embed/AZsh13Zb-PQ?rel=0"
                 title="Factory Licence Walkthrough"
                 allow="autoplay; encrypted-media"
                 allowFullScreen
@@ -328,6 +333,61 @@ export default function FactoryLicenceUttarPradeshPage() {
             </ul>
           </Section>
 
+          <section className="p max-w-7xl mx-auto">
+  <h2 className="text-3xl font-semibold flex mb-4 text-[#7c4bdf]"             id="fee"
+>
+    <HiOfficeBuilding className="text-[#7c4bdf]" />
+    Fee Structure  
+  </h2>
+
+<div className="md:w-full w-[90vw]">
+                          <TUP />
+                        </div>
+            
+
+  {/* Renewal Fee Section */}
+  <div className="mt-10">
+    <h3 className="text-xl font-semibold text-[#7c4bdf] mb-2 flex items-center gap-2">
+      <RiTimeLine className="text-[#7c4bdf]" />
+      Renewal Fee
+    </h3>
+    <div className="text-gray-700 text-sm space-y-2">
+      <p>
+        The license renewal process in Uttar Pradesh is now digital. It is in
+        automatic mode. The fee is calculated based on:
+      </p>
+      <ul className="list-disc list-inside pl-4">
+        <li>Installed HP and the number of workers.</li>
+        <li>Whether the renewal is within the stipulated time or delayed.</li>
+        <li>
+          System-generated charges and applicable penalties, if any.
+        </li>
+      </ul>
+      <p className="italic">
+        Note: The state may auto-calculate the renewal fee based on the entered
+        details. Exact amounts are viewable during the online application.
+      </p>
+    </div>
+  </div>
+
+  {/* Amendment Fee Section */}
+  <div className="mt-8">
+    <h3 className="text-xl font-semibold text-[#7c4bdf] mb-2 flex items-center gap-2">
+      <AiOutlineEdit className="text-[#7c4bdf]" />
+      Amendment Fee
+    </h3>
+    <div className="text-gray-700 text-sm space-y-2">
+      <p>
+        The procedure for amendment in Uttar Pradesh has been digitalized and it can be handled through labour department’s web portal.
+      </p>
+      <p className="italic">
+        Note: No fixed fee breakdown is publicly available. The renewal and amendment follow online portal processes, sometimes implementing auto charge based on HP/worker thresholds, with late fee mechanisms.
+      </p>
+    </div>
+  </div>
+</section>
+
+
           <Section
             id="steps"
             title={
@@ -451,6 +511,11 @@ export default function FactoryLicenceUttarPradeshPage() {
                     label: "Documents Required",
                     id: "documents",
                     icon: <FaFileAlt className="inline mr-2" />,
+                  },
+                  {
+                    label: "Fee Structure  ",
+                    id: "fee",
+                    icon: <HiOfficeBuilding className="inline mr-2" />,
                   },
                   {
                     label: "Steps to Get Licence",

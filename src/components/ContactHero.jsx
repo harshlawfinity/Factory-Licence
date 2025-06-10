@@ -9,18 +9,7 @@ export default function ContactUs() {
             <h1 className="text-4xl md:text-5xl font-semibold leading-tight mb-6">
               Contact Us
             </h1>
-            {/* <p className="text-lg max-w-2xl mx-auto mb-8">
-              Ensure compliance and legal security for your manufacturing unit
-              in Delhi with our expert licensing assistance.
-            </p> */}
-            {/* <div className="flex gap-4 flex-wrap justify-center">
-              <button className="bg-white text-[#7A3EF2] font-semibold px-6 py-3 rounded-full hover:bg-gray-100 transition">
-                Get Started
-              </button>
-              <button className="border border-white px-6 py-3 rounded-full font-semibold hover:bg-white hover:text-[#7A3EF2] transition">
-                Learn More
-              </button>
-            </div> */}
+            
           </div>
         </div>
       </div>

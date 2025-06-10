@@ -1,26 +1,20 @@
-import Navbar from "./components/Navbar"
- 
-import Footer from "./components/Footer"
-import ScrollTop from "./components/ScrollTop"
- 
-import Routing from "./utils/Routing.jsx"
-import { useEffect, useState } from "react"
+import { lazy, Suspense } from "react"
 
-
+// Lazy load non-critical components
+const Navbar = lazy(() => import("./components/Navbar"))
+const Footer = lazy(() => import("./components/Footer"))
+const ScrollTop = lazy(() => import("./components/ScrollTop"))
+const Routing = lazy(() => import("./utils/Routing.jsx"))
 
 const App = () => {
-    const [text, setText] = useState("");
-
- 
-
   return (
-    <div className='text-amber-300'>
-      <Navbar />
-      <ScrollTop />
-      <Routing />
-      <Footer />
-      
-      
+    <div className=''>
+      <Suspense fallback={<div className="text-white">Loading...</div>}>
+        <Navbar />
+        <ScrollTop />
+        <Routing />
+        <Footer />
+      </Suspense>
     </div>
   )
 }

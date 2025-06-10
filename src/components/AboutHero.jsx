@@ -1,7 +1,6 @@
 import { useState, lazy, Suspense } from "react";
 import { ArrowRight } from "lucide-react";
-import { Helmet } from "react-helmet";
-
+ 
 // Lazy load ContactForm
 const ContactForm = lazy(() => import("./ContactForm"));
 
