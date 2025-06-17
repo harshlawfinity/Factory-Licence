@@ -70,7 +70,7 @@ export default function Footer() {
           </div>
         <div className="flex space-x-6 mt-8">
   <a
-    href="https://www.facebook.com/profile.php?id=61564049563827"
+    href="https://www.facebook.com/factorylicence"
     aria-label="Facebook"
     target="_blank"
     rel="noopener noreferrer"
@@ -78,17 +78,9 @@ export default function Footer() {
   >
     <Facebook size={28} />
   </a>
+
   <a
-    href="https://x.com/LawfinityIndia"
-    aria-label="Twitter"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="hover:text-purple-800 transition-colors"
-  >
-    <Twitter size={28} />
-  </a>
-  <a
-    href="https://www.instagram.com/lawfinityindia/"
+    href="https://www.instagram.com/factorylicence.in/?igsh=dTM3azlxc3ExMnRr#"
     aria-label="Instagram"
     target="_blank"
     rel="noopener noreferrer"
@@ -106,7 +98,7 @@ export default function Footer() {
     <Linkedin size={28} />
   </a>
   <a
-    href="https://www.youtube.com/@LawfinityIndiaPrivateLimited"
+    href="https://www.youtube.com/@FactoryLicence"
     aria-label="YouTube"
     target="_blank"
     rel="noopener noreferrer"

@@ -1,6 +1,9 @@
-import   { useState, lazy  } from "react";
+import   { useState, lazy, useEffect  } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import ReactPixel from 'react-facebook-pixel';
+import Cookies from 'js-cookie';
+
 
 // Lazy-load icons
 const FiUser = lazy(() => import("react-icons/fi").then(mod => ({ default: mod.FiUser })));
@@ -8,6 +11,7 @@ const FiPhone = lazy(() => import("react-icons/fi").then(mod => ({ default: mod.
 const FiMail = lazy(() => import("react-icons/fi").then(mod => ({ default: mod.FiMail })));
 const FiMessageSquare = lazy(() => import("react-icons/fi").then(mod => ({ default: mod.FiMessageSquare })));
 const FiKey = lazy(() => import("react-icons/fi").then(mod => ({ default: mod.FiKey })));
+
 
 const HeroForm = () => {
   const [formData, setFormData] = useState({
@@ -56,17 +60,25 @@ const HeroForm = () => {
         dataToSend
       );
 
+      ReactPixel.track('Lead');
+
       if (response.status === 200) {
-        alert("Form submitted successfully!");
-        navigate("/thank-you");
-        setFormData({
-          name: "",
-          phone: "",
-          email: "",
-          description: "",
-          otp: "",
-        });
-      } else {
+  // Save form data in cookies
+  Cookies.set('userName', formData.name, { expires: 7 });
+  Cookies.set('userPhone', formData.phone, { expires: 7 });
+  Cookies.set('userEmail', formData.email, { expires: 7 });
+
+  alert("Form submitted successfully!");
+  navigate("/thank-you");
+
+  setFormData({
+    name: "",
+    phone: "",
+    email: "",
+    description: "",
+    otp: "",
+  });
+} else {
         alert("Failed to submit the form. Please try again.");
       }
     } catch (error) {
@@ -76,6 +88,21 @@ const HeroForm = () => {
       setIsSubmitting(false);
     }
   };
+
+  useEffect(() => {
+  const savedName = Cookies.get('userName');
+  const savedPhone = Cookies.get('userPhone');
+  const savedEmail = Cookies.get('userEmail');
+
+  if (savedName || savedPhone || savedEmail) {
+    setFormData(prev => ({
+      ...prev,
+      name: savedName || "",
+      phone: savedPhone || "",
+      email: savedEmail || "",
+    }));
+  }
+}, []);
 
   return (
     <div>
