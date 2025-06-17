@@ -25,9 +25,12 @@ const App = () => {
         <Footer />
       </Suspense>
 
-     <CookieConsent
+     <div className="">
+      <CookieConsent
   location="bottom"
   buttonText="Accept"
+  declineButtonText="Decline"
+  enableDeclineButton
   cookieName="siteCookieConsent"
   style={{ background: "#2B373B" }}
   buttonStyle={{
@@ -37,11 +40,30 @@ const App = () => {
     borderRadius: "5px",
     padding: "8px 16px",
     border: "none",
+    marginRight: "10px",
+  }}
+  declineButtonStyle={{
+    backgroundColor: "#999",
+    color: "#fff",
+    fontSize: "13px",
+    borderRadius: "5px",
+    padding: "8px 16px",
+    border: "none",
+  }}
+  onAccept={() => {
+    ReactPixel.init('1451817052652745');
+    ReactPixel.pageView();
+    ReactPixel.track('ViewContent');
+   }}
+  onDecline={() => {
+    console.log("User declined cookie tracking.");
   }}
   expires={150}
 >
-        We use cookies to enhance user experience. By continuing, you agree to our use of cookies.
-      </CookieConsent>
+  We use cookies to enhance user experience. You can accept or decline.
+</CookieConsent>
+
+     </div>
     </div>
   )
 }
