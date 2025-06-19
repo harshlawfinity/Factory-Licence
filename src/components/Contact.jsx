@@ -9,17 +9,17 @@ const Contact = () => {
   return (
     <div>
       <Helmet>
-  <title>Contact Us | Factory Licence India</title>
-  <meta name="title" content="Contact Us | Factory Licence India" />
+  <title>Contact Us | FactoryLicence.in – Expert Help with Factory Licensing & Compliance</title>
+  <meta name="title" content="Contact Us | FactoryLicence.in – Expert Help with Factory Licensing & Compliance" />
   <meta
     name="description"
-    content="Get in touch with the FactoryLicence.in team. Reach us via phone, email, or visit our office for expert assistance in licensing and compliance."
+    content="Get in touch with FactoryLicence.in for professional assistance in factory license registration, renewal, and compliance. Quick response, expert support, and hassle-free service."
   />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://factorylicence.in/contact" />
 
   {/* Open Graph */}
-  <meta property="og:title" content="Contact Us | Factory Licence India" />
+  <meta property="og:title" content="Contact Us | FactoryLicence.in – Expert Help with Factory Licensing & Compliance" />
   <meta
     property="og:description"
     content="Reach LAWFINITY INDIA PRIVATE LIMITED for expert guidance on factory licensing and compliance. Visit or contact us directly."
@@ -33,7 +33,7 @@ const Contact = () => {
 
   {/* Twitter Card */}
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Contact Us | Factory Licence India" />
+  <meta name="twitter:title" content="Contact Us | FactoryLicence.in – Expert Help with Factory Licensing & Compliance" />
   <meta
     name="twitter:description"
     content="Get help with factory licence services. Contact the LAWFINITY team via email, call, or office visit."
@@ -48,7 +48,7 @@ const Contact = () => {
     {JSON.stringify({
       "@context": "https://schema.org",
       "@type": "ContactPage",
-      name: "Contact Us | Factory Licence India",
+      name: "Contact Us | FactoryLicence.in – Expert Help with Factory Licensing & Compliance",
       url: "https://factorylicence.in/contact",
       description:
         "Contact page of FactoryLicence.in. Find ways to connect with LAWFINITY INDIA PRIVATE LIMITED for support and queries.",

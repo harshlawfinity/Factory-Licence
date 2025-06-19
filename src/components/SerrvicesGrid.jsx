@@ -46,73 +46,7 @@ const FactoryLicenseGrid = () => {
 
   return (
     <div className="py-16 px-4 bg-white" aria-label="Factory Licence Services Grid Section">
-      {/* 🔹 Helmet SEO + JSON-LD Schema */}
-      <Helmet>
-        <title>Factory Licence | Expert Regulatory Help</title>
-        <meta
-          name="description"
-          content="Get expert support for Factory Licence, Labour Law compliance, Fire & Safety, Pollution NOCs, and more. Full documentation & liaison services included."
-        />
-        <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://yourdomain.com/factory-licence-services" />
-
-        {/* Open Graph */}
-        <meta property="og:title" content="Factory Licence | Expert Regulatory Help" />
-        <meta
-          property="og:description"
-          content="Get expert support for Factory Licence, Labour Law compliance, Fire & Safety, Pollution NOCs, and more. Full documentation & liaison services included."
-        />
-        <meta property="og:url" content="https://yourdomain.com/factory-licence-services" />
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://yourdomain.com/path-to-thumbnail.jpg" />
-
-        {/* Twitter Card */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Factory Licence | Expert Regulatory Help" />
-        <meta name="twitter:description" content="We handle Factory Licence, Labour Law, NOCs & renewals for your unit." />
-        <meta name="twitter:image" content="https://yourdomain.com/path-to-thumbnail.jpg" />
-
-        {/* Schema Markup (Service) */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Service",
-            "name": "Factory Licence & Compliance Services",
-            "provider": {
-              "@type": "LocalBusiness",
-              "name": "Your Business Name",
-              "url": "https://yourdomain.com",
-              "telephone": "+91-9876543210",
-              "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "123 Industrial Area",
-                "addressLocality": "Mumbai",
-                "addressRegion": "MH",
-                "postalCode": "400001",
-                "addressCountry": "IN"
-              }
-            },
-            "serviceType": "Factory Licence Consulting & Documentation",
-            "areaServed": {
-              "@type": "Country",
-              "name": "India"
-            },
-            "description": "We assist in obtaining factory licences, pollution and fire safety NOCs, compliance with labour laws, and ongoing renewals or audits.",
-            "hasOfferCatalog": {
-              "@type": "OfferCatalog",
-              "name": "Factory Licence Services",
-              "itemListElement": services.map((item) => ({
-                "@type": "Offer",
-                "itemOffered": {
-                  "@type": "Service",
-                  "name": item.title,
-                  "description": item.desc,
-                },
-              })),
-            },
-          })}
-        </script>
-      </Helmet>
+    
 
       {/* Content */}
       <div className="max-w-7xl mx-auto text-center">

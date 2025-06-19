@@ -1,9 +1,9 @@
-import { Helmet } from 'react-helmet-async';
+import { Helmet } from 'react-helmet';
 
 const SEO = () => (
   <Helmet>
 
-    
+
     {/* Basic Geo & Dublin Core Meta Tags */}
     <meta name="DC.title" content="Factory Licence.in" />
     <meta name="geo.region" content="IN-DL" />
