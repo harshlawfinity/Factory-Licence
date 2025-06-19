@@ -58,79 +58,78 @@ export default function FactoryLicenceUttarPradeshPage() {
 
   return (
     <div>
-      <Helmet>
-        <title>
-          Factory Licence Registration in Uttar Pradesh | Fast, Legal &
-          Compliant
-        </title>
-        <meta
-          name="description"
-          content="Apply for your Factory Licence in Uttar Pradesh with expert support. Avoid penalties, comply with laws, and speed up your approval process. Get your licence hassle-free."
-        />
-        <meta name="robots" content="index, follow" />
-        <link
-          rel="canonical"
-          href="https://factorylicence.in/factory-licence-in-uttar-pradesh"
-        />
-
-        {/* Open Graph Meta Tags */}
-        <meta
-          property="og:title"
-          content="Factory Licence Registration in Uttar Pradesh | Fast, Legal & Compliant"
-        />
-        <meta
-          property="og:description"
-          content="Apply for your Factory Licence in Uttar Pradesh with expert support. Avoid penalties, comply with laws, and speed up your approval process."
-        />
-        <meta
-          property="og:url"
-          content="https://factorylicence.in/factory-licence-in-uttar-pradesh"
-        />
-        <meta property="og:type" content="website" />
-        <meta
-          property="og:image"
-          content="https://factorylicence.in/public/fav2.webp"
-        />
-
-        {/* Twitter Meta Tags */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:title"
-          content="Factory Licence Registration in Uttar Pradesh | Fast, Legal & Compliant"
-        />
-        <meta
-          name="twitter:description"
-          content="Apply for your Factory Licence in Uttar Pradesh with expert support. Avoid penalties, comply with laws, and speed up your approval process."
-        />
-        <meta
-          name="twitter:image"
-          content="https://factorylicence.in/public/fav2.webp"
-        />
-
-        {/* Schema.org JSON-LD Markup */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "LocalBusiness",
-            name: "Factory Licence Uttar Pradesh",
-            image: "https://factorylicence.in/public/fav2.webp",
-            url: "https://factorylicence.in/factory-licence-in-uttar-pradesh",
-            telephone: "+91-9910774687",
-            address: {
-              "@type": "PostalAddress",
-              streetAddress:
-                "T-10, Plot No. -7, 3rd Floor, Pankaj Plaza, Pocket-7, Sector-12, Dwarka",
-              addressLocality: "New Uttar Pradesh",
-              addressRegion: "DL",
-              postalCode: "110078",
-              addressCountry: "IN",
-            },
-            description:
-              "We offer expert assistance in obtaining your factory licence in Uttar Pradesh. Fast approvals, end-to-end support, and full legal compliance.",
-            openingHours: "Mo-Sa 10:00-19:00",
-          })}
-        </script>
-      </Helmet>
+     <Helmet>
+            <title>
+               Factory License in Uttar Pradesh – Fast & Easy
+            </title>
+            <meta
+              name="description"
+              content="Apply factory license in Uttar Pradesh online. Expert guidance, fast approval & end-to-end support for new registrations and renewals. Get licensed today!"
+            />
+            <meta name="robots" content="index, follow" />
+            <link
+              rel="canonical"
+              href="https://factorylicence.in/factory-licence-in-uttar-pradesh"
+            />
+    
+            {/* Open Graph Meta Tags */}
+            <meta
+              property="og:title"
+              content=" Factory License in Uttar Pradesh – Fast & Easy"
+            />
+            <meta
+              property="og:description"
+              content="Apply factory license in Uttar Pradesh online. Expert guidance, fast approval & end-to-end support for new registrations and renewals. Get licensed today!"
+            />
+            <meta
+              property="og:url"
+              content="https://factorylicence.in/factory-licence-in-uttar-pradesh"
+            />
+            <meta property="og:type" content="website" />
+            <meta
+              property="og:image"
+              content="https://factorylicence.in/public/fav2.webp"
+            />
+    
+            {/* Twitter Meta Tags */}
+            <meta name="twitter:card" content="summary_large_image" />
+            <meta
+              name="twitter:title"
+              content=" Factory License in Uttar Pradesh – Fast & Easy"
+            />
+            <meta
+              name="twitter:description"
+              content="Apply factory license in Uttar Pradesh online. Expert guidance, fast approval & end-to-end support for new registrations and renewals. Get licensed today!"
+            />
+            <meta
+              name="twitter:image"
+              content="https://factorylicence.in/public/fav2.webp"
+            />
+    
+            {/* Schema.org JSON-LD Markup */}
+            <script type="application/ld+json">
+              {JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "LocalBusiness",
+                name: "Factory Licence Uttar Pradesh",
+                image: "https://factorylicence.in/public/fav2.webp",
+                url: "https://factorylicence.in/factory-licence-in-uttar-pradesh",
+                telephone: "+91-9910774687",
+                address: {
+                  "@type": "PostalAddress",
+                  streetAddress:
+                    "T-10, Plot No. -7, 3rd Floor, Pankaj Plaza, Pocket-7, Sector-12, Dwarka",
+                  addressLocality: "New Delhi",
+                  addressRegion: "DL",
+                  postalCode: "110078",
+                  addressCountry: "IN",
+                },
+                description:
+                  "We offer expert assistance in obtaining your factory licence in Uttar Pradesh. Fast approvals, end-to-end support, and full legal compliance.",
+                openingHours: "Mo-Sa 10:00-19:00",
+              })}
+            </script>
+          </Helmet>
 
       {/* Hero Section */}
 

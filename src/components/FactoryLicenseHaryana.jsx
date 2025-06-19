@@ -58,39 +58,75 @@ export default function FactoryLicenceHaryanaPage() {
 
   return (
     <div>
-      <Helmet>
+     <Helmet>
         <title>
-          Factory Licence in Haryana | Apply Online with Legal Experts
+          Factory License in Haryana – Expert Factory Consultants
         </title>
         <meta
           name="description"
-          content="Get your Factory Licence in Haryana online with expert support. Ensure compliance, avoid penalties, and streamline approval. Fast, affordable, legal."
+          content="Get your factory license in Haryana with trusted consultants. Fast online process, expert support, and complete compliance for new setups or renewals."
         />
+        <meta name="robots" content="index, follow" />
         <link
           rel="canonical"
-          href="https://yourwebsite.com/factory-licence-haryana"
+          href="https://factorylicence.in/factory-licence-in-haryana"
         />
-        <link rel="preload" as="image" href={bg1} />
 
+        {/* Open Graph Meta Tags */}
+        <meta
+          property="og:title"
+          content="Factory License in Haryana – Expert Factory Consultants"
+        />
+        <meta
+          property="og:description"
+          content="Get your factory license in Haryana with trusted consultants. Fast online process, expert support, and complete compliance for new setups or renewals."
+        />
+        <meta
+          property="og:url"
+          content="https://factorylicence.in/factory-licence-in-haryana"
+        />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:image"
+          content="https://factorylicence.in/public/fav2.webp"
+        />
+
+        {/* Twitter Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Factory License in Haryana – Expert Factory Consultants"
+        />
+        <meta
+          name="twitter:description"
+          content="Get your factory license in Haryana with trusted consultants. Fast online process, expert support, and complete compliance for new setups or renewals."
+        />
+        <meta
+          name="twitter:image"
+          content="https://factorylicence.in/public/fav2.webp"
+        />
+
+        {/* Schema.org JSON-LD Markup */}
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "ProfessionalService",
-            name: "Factory Licence Haryana Services",
-            url: "https://yourwebsite.com/factory-licence-haryana",
-            logo: "https://yourwebsite.com/logo.png",
-            image: "https://yourwebsite.com/factory-licence-banner.webp",
+            "@type": "LocalBusiness",
+            name: "Factory Licence Haryana",
+            image: "https://factorylicence.in/public/fav2.webp",
+            url: "https://factorylicence.in/factory-licence-in-haryana",
+            telephone: "+91-9910774687",
+            address: {
+              "@type": "PostalAddress",
+              streetAddress:
+                "T-10, Plot No. -7, 3rd Floor, Pankaj Plaza, Pocket-7, Sector-12, Dwarka",
+              addressLocality: "New Delhi",
+              addressRegion: "DL",
+              postalCode: "110078",
+              addressCountry: "IN",
+            },
             description:
-              "Apply for your Factory Licence in Haryana with legal experts. Fast, compliant, and affordable.",
-            areaServed: {
-              "@type": "State",
-              name: "Haryana",
-            },
-            provider: {
-              "@type": "Organization",
-              name: "Lawfinity India Pvt Ltd",
-              url: "https://yourwebsite.com",
-            },
+              "We offer expert assistance in obtaining your factory licence in Haryana. Fast approvals, end-to-end support, and full legal compliance.",
+            openingHours: "Mo-Sa 10:00-19:00",
           })}
         </script>
       </Helmet>
@@ -292,7 +328,7 @@ export default function FactoryLicenceHaryanaPage() {
                 Sale Deed/ Rent Agreement of premises.
               </li>
               <li className="text-justify ">
-                Sanctioned load from HVPNL / Latest Electricity Bill
+                Sanctioned load from HVPNL / Latest Electricity Bill
               </li>
             </ul>
           </Section>

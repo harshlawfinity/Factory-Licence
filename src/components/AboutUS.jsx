@@ -12,10 +12,10 @@ const AboutUS = () => {
   return (
     <div>
       <Helmet>
-        <title>About Us | Factory Licence – Expert Compliance Partner</title>
+        <title>About Lawfinity India Private Limited</title>
         <meta
           name="description"
-          content="Learn about Factory Licence – your trusted compliance partner helping businesses with factory registration, documentation and regulatory processes."
+          content="Learn about Lawfinity India Private Limited, the team behind FactoryLicence.in. Trusted experts in factory licensing, compliance, and legal consultancy in India."
         />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://factorylicence.in/about" />

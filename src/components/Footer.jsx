@@ -89,7 +89,7 @@ export default function Footer() {
     <Instagram size={28} />
   </a>
   <a
-    href="https://www.linkedin.com/company/lawfinity-india-private-limited-vyaapaar-salahkaar/"
+    href="https://www.linkedin.com/company/factorylicence/"
     aria-label="LinkedIn"
     target="_blank"
     rel="noopener noreferrer"

@@ -92,11 +92,11 @@ export default function FactoryLicenceDelhiPage() {
     <div>
       <Helmet>
         <title>
-          Factory Licence Registration in Delhi | Fast, Legal & Compliant
+          Trusted Delhi Factory License Consultants – Apply Now
         </title>
         <meta
           name="description"
-          content="Apply for your Factory Licence in Delhi with expert support. Avoid penalties, comply with laws, and speed up your approval process. Get your licence hassle-free."
+          content="Apply for your factory license in Delhi online. Fast approval, expert support & end-to-end compliance for new units or renewals. Trusted licensing consultants."
         />
         <meta name="robots" content="index, follow" />
         <link
@@ -107,11 +107,11 @@ export default function FactoryLicenceDelhiPage() {
         {/* Open Graph Meta Tags */}
         <meta
           property="og:title"
-          content="Factory Licence Registration in Delhi | Fast, Legal & Compliant"
+          content="Trusted Delhi Factory License Consultants – Apply Now"
         />
         <meta
           property="og:description"
-          content="Apply for your Factory Licence in Delhi with expert support. Avoid penalties, comply with laws, and speed up your approval process."
+          content="Apply for your factory license in Delhi online. Fast approval, expert support & end-to-end compliance for new units or renewals. Trusted licensing consultants."
         />
         <meta
           property="og:url"
@@ -127,11 +127,11 @@ export default function FactoryLicenceDelhiPage() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
-          content="Factory Licence Registration in Delhi | Fast, Legal & Compliant"
+          content="Trusted Delhi Factory License Consultants – Apply Now"
         />
         <meta
           name="twitter:description"
-          content="Apply for your Factory Licence in Delhi with expert support. Avoid penalties, comply with laws, and speed up your approval process."
+          content="Apply for your factory license in Delhi online. Fast approval, expert support & end-to-end compliance for new units or renewals. Trusted licensing consultants."
         />
         <meta
           name="twitter:image"
