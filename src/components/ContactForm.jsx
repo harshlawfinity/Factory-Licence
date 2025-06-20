@@ -1,17 +1,25 @@
-import   { useState, lazy, useEffect  } from "react";
+import { useState, lazy, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import ReactPixel from 'react-facebook-pixel';
-import Cookies from 'js-cookie';
-
+import ReactPixel from "react-facebook-pixel";
+import Cookies from "js-cookie";
 
 // Lazy-load icons
-const FiUser = lazy(() => import("react-icons/fi").then(mod => ({ default: mod.FiUser })));
-const FiPhone = lazy(() => import("react-icons/fi").then(mod => ({ default: mod.FiPhone })));
-const FiMail = lazy(() => import("react-icons/fi").then(mod => ({ default: mod.FiMail })));
-const FiMessageSquare = lazy(() => import("react-icons/fi").then(mod => ({ default: mod.FiMessageSquare })));
-const FiKey = lazy(() => import("react-icons/fi").then(mod => ({ default: mod.FiKey })));
-
+const FiUser = lazy(() =>
+  import("react-icons/fi").then((mod) => ({ default: mod.FiUser }))
+);
+const FiPhone = lazy(() =>
+  import("react-icons/fi").then((mod) => ({ default: mod.FiPhone }))
+);
+const FiMail = lazy(() =>
+  import("react-icons/fi").then((mod) => ({ default: mod.FiMail }))
+);
+const FiMessageSquare = lazy(() =>
+  import("react-icons/fi").then((mod) => ({ default: mod.FiMessageSquare }))
+);
+const FiKey = lazy(() =>
+  import("react-icons/fi").then((mod) => ({ default: mod.FiKey }))
+);
 
 const HeroForm = () => {
   const [formData, setFormData] = useState({
@@ -20,7 +28,9 @@ const HeroForm = () => {
     email: "",
     description: "",
     otp: "",
+    pageSource: "",
   });
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const navigate = useNavigate();
 
@@ -50,6 +60,7 @@ const HeroForm = () => {
         phone: formData.phone,
         email: formData.email,
         description: formData.description,
+        pageSource: formData.pageSource,  
         timestamp,
       };
 
@@ -60,25 +71,25 @@ const HeroForm = () => {
         dataToSend
       );
 
-      ReactPixel.track('Lead');
+      ReactPixel.track("Lead");
 
       if (response.status === 200) {
-  // Save form data in cookies
-  Cookies.set('userName', formData.name, { expires: 7 });
-  Cookies.set('userPhone', formData.phone, { expires: 7 });
-  Cookies.set('userEmail', formData.email, { expires: 7 });
+        // Save form data in cookies
+        Cookies.set("userName", formData.name, { expires: 7 });
+        Cookies.set("userPhone", formData.phone, { expires: 7 });
+        Cookies.set("userEmail", formData.email, { expires: 7 });
 
-  alert("Form submitted successfully!");
-  navigate("/thank-you");
+        alert("Form submitted successfully!");
+        navigate("/thank-you");
 
-  setFormData({
-    name: "",
-    phone: "",
-    email: "",
-    description: "",
-    otp: "",
-  });
-} else {
+        setFormData({
+          name: "",
+          phone: "",
+          email: "",
+          description: "",
+          otp: "",
+        });
+      } else {
         alert("Failed to submit the form. Please try again.");
       }
     } catch (error) {
@@ -90,19 +101,26 @@ const HeroForm = () => {
   };
 
   useEffect(() => {
-  const savedName = Cookies.get('userName');
-  const savedPhone = Cookies.get('userPhone');
-  const savedEmail = Cookies.get('userEmail');
+    const savedName = Cookies.get("userName");
+    const savedPhone = Cookies.get("userPhone");
+    const savedEmail = Cookies.get("userEmail");
 
-  if (savedName || savedPhone || savedEmail) {
-    setFormData(prev => ({
+    if (savedName || savedPhone || savedEmail) {
+      setFormData((prev) => ({
+        ...prev,
+        name: savedName || "",
+        phone: savedPhone || "",
+        email: savedEmail || "",
+      }));
+    }
+
+    // Capture the current page path
+    const currentPath = window.location.pathname;
+    setFormData((prev) => ({
       ...prev,
-      name: savedName || "",
-      phone: savedPhone || "",
-      email: savedEmail || "",
+      pageSource: currentPath,
     }));
-  }
-}, []);
+  }, []);
 
   return (
     <div>
@@ -156,27 +174,6 @@ const HeroForm = () => {
             </button> */}
           </div>
 
-          {/* OTP Field */}
-          {/* <div className="flex items-center bg-white border border-gray-300 rounded-md p-3 shadow-sm">
-            <FiKey className="text-gray-400 text-xl mr-3" />
-            <input
-              type="text"
-              name="otp"
-              value={formData.otp}
-              onChange={handleInputChange}
-              placeholder="Enter OTP"
-              className="w-full bg-transparent outline-none text-gray-700"
-            />
-
-             <button
-              type="button"
-              onClick={() => alert("OTP sent!")} 
-              className="md:text-sm bg-[#7A3EF2] text-white py-1 px-4 rounded-md text-xs font-semibold hover:underline"
-            >
-              Verify  
-            </button>
-          </div> */}
-
           {/* Email */}
           <div className="flex items-center bg-white border border-gray-300 rounded-md p-3 shadow-sm">
             <FiMail className="text-gray-400 text-xl mr-3" />
@@ -190,20 +187,6 @@ const HeroForm = () => {
               required
             />
           </div>
-
-          {/* Description */}
-          {/* <div className="flex items-start bg-white border border-gray-300 rounded-md p-3 shadow-sm">
-            <FiMessageSquare className="text-gray-400 text-xl mr-3 mt-1" />
-            <textarea
-              name="description"
-              rows="4"
-              value={formData.description}
-              onChange={handleInputChange}
-              placeholder="Tell us about your space or requirement"
-              className="w-full bg-transparent outline-none text-gray-700 resize-none"
-              required
-            />
-          </div> */}
 
           {/* Submit Button */}
           <button
@@ -224,4 +207,3 @@ const HeroForm = () => {
 };
 
 export default HeroForm;
-

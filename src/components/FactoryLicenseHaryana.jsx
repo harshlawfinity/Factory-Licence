@@ -60,16 +60,16 @@ export default function FactoryLicenceHaryanaPage() {
     <div>
      <Helmet>
         <title>Factory License in Haryana – Expert Factory Consultants</title>
-        <meta name="description" content="Get your factory license in Haryana with trusted consultants. Fast online process, expert support, and complete compliance for new setups or renewals." />
-        <meta name="keywords" content="factory license haryana, consultants factory" />
-        <meta property="og:title" content="Factory License in Haryana – Expert Factory Consultants" />
-        <meta property="og:description" content="Get your factory license in Haryana with trusted consultants. Fast online process, expert support, and complete compliance for new setups or renewals." />
-        <meta property="og:url" content="https://factorylicence.in/factory-licence-in-haryana" />
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://factorylicence.in/assets/factory-license-haryana-og.jpg" />
-        <meta property="og:site_name" content="FactoryLicence.in" />
-        <link rel="canonical" href="https://factorylicence.in/factory-licence-in-haryana" />
-      </Helmet>
+<meta name="description" content="Get your factory license in Haryana with trusted consultants. Fast online process, expert support, and complete compliance for new setups or renewals." />
+<meta name="keywords" content="factory license haryana, consultants factory" />
+<meta property="og:title" content="Factory License in Haryana – Expert Factory Consultants" />
+<meta property="og:description" content="Get your factory license in Haryana with trusted consultants. Fast online process, expert support, and complete compliance for new setups or renewals." />
+<meta property="og:url" content="https://factorylicence.in/factory-licence-in-haryana" />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://factorylicence.in/assets/factory-license-haryana-og.jpg" />
+<meta property="og:site_name" content="FactoryLicence.in" />
+<link rel="canonical" href="https://factorylicence.in/factory-licence-in-haryana" />
+</Helmet>
       {/* Hero Section */}
 
       <section className="relative text-white py-20   md:px-0 px-4 mt-20 overflow-hidden">

@@ -1,6 +1,6 @@
 import React, { Suspense, lazy, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
-import { Helmet } from 'react-helmet-async'
+import { Helmet } from "react-helmet-async";
 
 // Eager load HeroSection for fast LCP
 import HeroSection from "./components/HeroSection";
@@ -75,13 +75,7 @@ const Home = () => {
           name="description"
           content="Get your online factory license quickly with expert help. Easy registration, renewal & compliance services across India. Trusted by 1000+ businesses!"
         />
-        <meta name="robots" content="index, follow" />
-        <link
-          rel="canonical"
-          href="https://factorylicence.in/"
-        />
-
-        {/* Open Graph Meta Tags */}
+        <meta name="keywords" content="factory licence, factory license" />
         <meta
           property="og:title"
           content="Factory Licence Online in India – Fast Approval Guaranteed"
@@ -90,41 +84,14 @@ const Home = () => {
           property="og:description"
           content="Get your online factory license quickly with expert help. Easy registration, renewal & compliance services across India. Trusted by 1000+ businesses!"
         />
-        <meta
-          property="og:url"
-          content="https://factorylicence.in/"
-        />
+        <meta property="og:url" content="https://factorylicence.in/" />
         <meta property="og:type" content="website" />
         <meta
           property="og:image"
-          content="https://factorylicence.in/public/fav2.webp"
+          content="https://factorylicence.in/assets/factory-og-image.jpg"
         />
-
-        {/* Twitter Meta Tags */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:title"
-          content="Factory Licence Online in India – Fast Approval Guaranteed"
-        />
-        <meta
-          name="twitter:description"
-          content="Get your online factory license quickly with expert help. Easy registration, renewal & compliance services across India. Trusted by 1000+ businesses!"
-        />
-        <meta
-          name="twitter:image"
-          content="https://factorylicence.in/public/fav2.webp"
-        />
-
-        {/* Schema.org JSON-LD Markup */}
-        <meta name="DC.title" content="Factory Licence.in" />
-        <meta name="geo.region" content="IN-DL" />
-        <meta
-          name="geo.placename"
-          content="Sec-12, Dwarka, New Delhi - 110078"
-        />
-        <meta name="geo.position" content="22.351115;78.667743" />
-        <meta name="ICBM" content="22.351115, 78.667743" />
-
+        <meta property="og:site_name" content="FactoryLicence.in" />
+        <link rel="canonical" href="https://factorylicence.in/" />
         {/* JSON-LD Structured Data */}
         <script type="application/ld+json">
           {JSON.stringify({

@@ -12,16 +12,16 @@ const AboutUS = () => {
   return (
     <div>
          <Helmet>
-        <title>About Lawfinity India Private Limited</title>
-        <meta name="description" content="Learn about Lawfinity India Private Limited, the team behind FactoryLicence.in. Trusted experts in factory licensing, compliance, and legal consultancy in India." />
-        <meta property="og:title" content="About Lawfinity India Private Limited" />
-        <meta property="og:description" content="Learn about Lawfinity India Private Limited, the team behind FactoryLicence.in. Trusted experts in factory licensing, compliance, and legal consultancy in India." />
-        <meta property="og:url" content="https://factorylicence.in/about" />
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://factorylicence.in/assets/about-lawfinity-og.jpg" />
-        <meta property="og:site_name" content="FactoryLicence.in" />
-        <link rel="canonical" href="https://factorylicence.in/about" />
-      </Helmet>
+       
+<title>About Lawfinity India Private Limited</title>
+<meta name="description" content="Learn about Lawfinity India Private Limited, the team behind FactoryLicence.in. Trusted experts in factory licensing, compliance, and legal consultancy in India." />
+<meta property="og:title" content="About Lawfinity India Private Limited" />
+<meta property="og:description" content="Learn about Lawfinity India Private Limited, the team behind FactoryLicence.in. Trusted experts in factory licensing, compliance, and legal consultancy in India." />
+<meta property="og:url" content="https://factorylicence.in/about" />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://factorylicence.in/assets/about-lawfinity-og.jpg" />
+<meta property="og:site_name" content="FactoryLicence.in" />
+<link rel="canonical" href="https://factorylicence.in/about" /></Helmet>
 
       {/* Load critical content first */}
       <AboutHero />

@@ -59,17 +59,19 @@ export default function FactoryLicenceUttarPradeshPage() {
   return (
     <div>
       <Helmet>
-        <title>Factory License in Uttar Pradesh – Fast & Easy</title>
-        <meta name="description" content="Apply factory license in Uttar Pradesh online. Expert guidance, fast approval & end-to-end support for new registrations and renewals. Get licensed today!" />
-        <meta name="keywords" content="factory licence in uttar pradesh, online factory license" />
-        <meta property="og:title" content="Factory License in Uttar Pradesh – Fast & Easy" />
-        <meta property="og:description" content="Apply factory license in Uttar Pradesh online. Expert guidance, fast approval & end-to-end support for new registrations and renewals. Get licensed today!" />
-        <meta property="og:url" content="https://factorylicence.in/factory-licence-in-uttar-pradesh" />
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://factorylicence.in/assets/factory-license-up-og.jpg" />
-        <meta property="og:site_name" content="FactoryLicence.in" />
-        <link rel="canonical" href="https://factorylicence.in/factory-licence-in-uttar-pradesh" />
-      </Helmet>
+        
+<title>Factory License in Uttar Pradesh – Fast & Easy</title>
+<meta name="description" content="Apply factory license in Uttar Pradesh online. Expert guidance, fast approval & end-to-end support for new registrations and renewals. Get licensed today!" />
+<meta name="keywords" content="factory licence in uttar pradesh, online factory license" />
+<meta property="og:title" content="Factory License in Uttar Pradesh – Fast & Easy" />
+<meta property="og:description" content="Apply factory license in Uttar Pradesh online. Expert guidance, fast approval & end-to-end support for new registrations and renewals. Get licensed today!" />
+<meta property="og:url" content="https://factorylicence.in/factory-licence-in-uttar-pradesh" />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://factorylicence.in/assets/factory-license-up-og.jpg" />
+<meta property="og:site_name" content="FactoryLicence.in" />
+<link rel="canonical" href="https://factorylicence.in/factory-licence-in-uttar-pradesh" />
+
+</Helmet>
 
       {/* Hero Section */}
 

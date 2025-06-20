@@ -46,40 +46,9 @@ export default function FactoryLicenceDelhiPage() {
   const heroBackgrounds = [bg1, bg2, bg3];
   const [currentBg, setCurrentBg] = useState(0);
 
-  const feeData = [
-    {
-      hp: "Nil",
-      values: [100, 200, 400, 1000, 1600, 3000, 4000, 5000],
-    },
-    {
-      hp: "Up to 10",
-      values: [200, 400, 480, 1200, 2400, 3600, 4800, 6000],
-    },
-    {
-      hp: "Above 10 and up to 50",
-      values: [400, 600, 800, 2000, 4000, 6000, 8000, 10000],
-    },
-    {
-      hp: "Above 50 and up to 100",
-      values: [800, 1000, 1200, 3000, 6000, 9000, 12000, 15000],
-    },
-    {
-      hp: "Above 100",
-      values: [1200, 1600, 2000, 4000, 8000, 12000, 16000, 20000],
-    },
-  ];
+  
 
-  const workerHeaders = [
-    "Up - 20",
-    "21 - 50",
-    "51 - 100",
-    "101 - 250",
-    "251 - 500",
-    "501 - 750",
-    "751 - 1000",
-    "Above 1000",
-  ];
-
+  
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentBg((prev) => (prev + 1) % heroBackgrounds.length);
@@ -91,17 +60,20 @@ export default function FactoryLicenceDelhiPage() {
   return (
     <div>
        <Helmet>
+        
         <title>Trusted Delhi Factory License Consultants – Apply Now</title>
-        <meta name="description" content="Apply for your factory license in Delhi online. Fast approval, expert support..." />
-        <meta name="keywords" content="factory licence delhi, factory license in delhi, online factory license" />
-        <meta property="og:title" content="Trusted Delhi Factory License Consultants – Apply Now" />
-        <meta property="og:description" content="Apply for your factory license in Delhi online..." />
-        <meta property="og:url" content="https://factorylicence.in/factory-licence-in-delhi" />
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://factorylicence.in/assets/factory-license-delhi-og.jpg" />
-        <meta property="og:site_name" content="FactoryLicence.in" />
-        <link rel="canonical" href="https://factorylicence.in/factory-licence-in-delhi" />
-      </Helmet>
+<meta name="description" content="Apply for your factory license in Delhi online. Fast approval, expert support & end-to-end compliance for new units or renewals. Trusted licensing consultants." />
+<meta name="keywords" content="factory licence delhi, factory license in delhi, online factory license" />
+<meta property="og:title" content="Trusted Delhi Factory License Consultants – Apply Now" />
+<meta property="og:description" content="Apply for your factory license in Delhi online. Fast approval, expert support & end-to-end compliance for new units or renewals. Trusted licensing consultants." />
+<meta property="og:url" content="https://factorylicence.in/factory-licence-in-delhi" />
+<meta property="og:type" content="website" />
+<meta property="og:image"content="https://factorylicence.in/assets/factory-license-delhi-og.jpg" />
+<meta property="og:site_name" content="FactoryLicence.in" />
+<link rel="canonical" href="https://factorylicence.in/factory-licence-in-delhi" />
+
+
+        </Helmet>
 
       {/* Hero Section */}
 
