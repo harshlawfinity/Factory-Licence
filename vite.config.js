@@ -13,7 +13,7 @@ export default defineConfig({
 
     // Brotli is smaller and more modern, fallback is gzip
     compression({
-      algorithm: "brotliCompress", 
+      algorithm: "brotliCompress",
       ext: ".br",
       threshold: 1024, // compress only files > 1kb
       deleteOriginFile: false,
@@ -33,25 +33,9 @@ export default defineConfig({
   base: "/",
 
   build: {
-    target: "es2015",
-    minify: "esbuild",
-    sourcemap: false,
-    cssCodeSplit: true,
-    brotliSize: true,
-    rollupOptions: {
-      treeshake: true,
-      output: {
-        manualChunks(id) {
-          if (id.includes("node_modules")) {
-            return id
-              .toString()
-              .split("node_modules/")[1]
-              .split("/")[0]
-              .toString();
-          }
-        },
-      },
-    },
+    outDir: "dist",
+    ssrManifest: true,
+    emptyOutDir: false, // to preserve dist/index.html when building SSR
   },
 
   assetsInclude: ["**/*.webp", "**/*.avif"],

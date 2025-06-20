@@ -1,6 +1,6 @@
 import React, { Suspense, lazy, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
-import { Helmet } from "react-helmet";
+import { Helmet } from 'react-helmet-async'
 
 // Eager load HeroSection for fast LCP
 import HeroSection from "./components/HeroSection";

@@ -1,5 +1,5 @@
 import { lazy, Suspense, useEffect, useState } from "react";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 const FaIndustry = lazy(() =>
   import("react-icons/fa").then((mod) => ({ default: mod.FaIndustry }))
 );
@@ -90,77 +90,17 @@ export default function FactoryLicenceDelhiPage() {
 
   return (
     <div>
-      <Helmet>
-        <title>
-          Trusted Delhi Factory License Consultants – Apply Now
-        </title>
-        <meta
-          name="description"
-          content="Apply for your factory license in Delhi online. Fast approval, expert support & end-to-end compliance for new units or renewals. Trusted licensing consultants."
-        />
-        <meta name="robots" content="index, follow" />
-        <link
-          rel="canonical"
-          href="https://factorylicence.in/factory-licence-in-delhi"
-        />
-
-        {/* Open Graph Meta Tags */}
-        <meta
-          property="og:title"
-          content="Trusted Delhi Factory License Consultants – Apply Now"
-        />
-        <meta
-          property="og:description"
-          content="Apply for your factory license in Delhi online. Fast approval, expert support & end-to-end compliance for new units or renewals. Trusted licensing consultants."
-        />
-        <meta
-          property="og:url"
-          content="https://factorylicence.in/factory-licence-in-delhi"
-        />
+       <Helmet>
+        <title>Trusted Delhi Factory License Consultants – Apply Now</title>
+        <meta name="description" content="Apply for your factory license in Delhi online. Fast approval, expert support..." />
+        <meta name="keywords" content="factory licence delhi, factory license in delhi, online factory license" />
+        <meta property="og:title" content="Trusted Delhi Factory License Consultants – Apply Now" />
+        <meta property="og:description" content="Apply for your factory license in Delhi online..." />
+        <meta property="og:url" content="https://factorylicence.in/factory-licence-in-delhi" />
         <meta property="og:type" content="website" />
-        <meta
-          property="og:image"
-          content="https://factorylicence.in/public/fav2.webp"
-        />
-
-        {/* Twitter Meta Tags */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:title"
-          content="Trusted Delhi Factory License Consultants – Apply Now"
-        />
-        <meta
-          name="twitter:description"
-          content="Apply for your factory license in Delhi online. Fast approval, expert support & end-to-end compliance for new units or renewals. Trusted licensing consultants."
-        />
-        <meta
-          name="twitter:image"
-          content="https://factorylicence.in/public/fav2.webp"
-        />
-
-        {/* Schema.org JSON-LD Markup */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "LocalBusiness",
-            name: "Factory Licence Delhi",
-            image: "https://factorylicence.in/public/fav2.webp",
-            url: "https://factorylicence.in/factory-licence-in-delhi",
-            telephone: "+91-9910774687",
-            address: {
-              "@type": "PostalAddress",
-              streetAddress:
-                "T-10, Plot No. -7, 3rd Floor, Pankaj Plaza, Pocket-7, Sector-12, Dwarka",
-              addressLocality: "New Delhi",
-              addressRegion: "DL",
-              postalCode: "110078",
-              addressCountry: "IN",
-            },
-            description:
-              "We offer expert assistance in obtaining your factory licence in Delhi. Fast approvals, end-to-end support, and full legal compliance.",
-            openingHours: "Mo-Sa 10:00-19:00",
-          })}
-        </script>
+        <meta property="og:image" content="https://factorylicence.in/assets/factory-license-delhi-og.jpg" />
+        <meta property="og:site_name" content="FactoryLicence.in" />
+        <link rel="canonical" href="https://factorylicence.in/factory-licence-in-delhi" />
       </Helmet>
 
       {/* Hero Section */}

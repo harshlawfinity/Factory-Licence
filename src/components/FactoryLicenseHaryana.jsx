@@ -1,5 +1,5 @@
 import React, { lazy, useEffect, useState } from "react";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 
 const FaIndustry = lazy(() =>
   import("react-icons/fa").then((mod) => ({ default: mod.FaIndustry }))
@@ -59,78 +59,17 @@ export default function FactoryLicenceHaryanaPage() {
   return (
     <div>
      <Helmet>
-        <title>
-          Factory License in Haryana – Expert Factory Consultants
-        </title>
-        <meta
-          name="description"
-          content="Get your factory license in Haryana with trusted consultants. Fast online process, expert support, and complete compliance for new setups or renewals."
-        />
-        <meta name="robots" content="index, follow" />
-        <link
-          rel="canonical"
-          href="https://factorylicence.in/factory-licence-in-haryana"
-        />
-
-        {/* Open Graph Meta Tags */}
-        <meta
-          property="og:title"
-          content="Factory License in Haryana – Expert Factory Consultants"
-        />
-        <meta
-          property="og:description"
-          content="Get your factory license in Haryana with trusted consultants. Fast online process, expert support, and complete compliance for new setups or renewals."
-        />
-        <meta
-          property="og:url"
-          content="https://factorylicence.in/factory-licence-in-haryana"
-        />
+        <title>Factory License in Haryana – Expert Factory Consultants</title>
+        <meta name="description" content="Get your factory license in Haryana with trusted consultants. Fast online process, expert support, and complete compliance for new setups or renewals." />
+        <meta name="keywords" content="factory license haryana, consultants factory" />
+        <meta property="og:title" content="Factory License in Haryana – Expert Factory Consultants" />
+        <meta property="og:description" content="Get your factory license in Haryana with trusted consultants. Fast online process, expert support, and complete compliance for new setups or renewals." />
+        <meta property="og:url" content="https://factorylicence.in/factory-licence-in-haryana" />
         <meta property="og:type" content="website" />
-        <meta
-          property="og:image"
-          content="https://factorylicence.in/public/fav2.webp"
-        />
-
-        {/* Twitter Meta Tags */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:title"
-          content="Factory License in Haryana – Expert Factory Consultants"
-        />
-        <meta
-          name="twitter:description"
-          content="Get your factory license in Haryana with trusted consultants. Fast online process, expert support, and complete compliance for new setups or renewals."
-        />
-        <meta
-          name="twitter:image"
-          content="https://factorylicence.in/public/fav2.webp"
-        />
-
-        {/* Schema.org JSON-LD Markup */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "LocalBusiness",
-            name: "Factory Licence Haryana",
-            image: "https://factorylicence.in/public/fav2.webp",
-            url: "https://factorylicence.in/factory-licence-in-haryana",
-            telephone: "+91-9910774687",
-            address: {
-              "@type": "PostalAddress",
-              streetAddress:
-                "T-10, Plot No. -7, 3rd Floor, Pankaj Plaza, Pocket-7, Sector-12, Dwarka",
-              addressLocality: "New Delhi",
-              addressRegion: "DL",
-              postalCode: "110078",
-              addressCountry: "IN",
-            },
-            description:
-              "We offer expert assistance in obtaining your factory licence in Haryana. Fast approvals, end-to-end support, and full legal compliance.",
-            openingHours: "Mo-Sa 10:00-19:00",
-          })}
-        </script>
+        <meta property="og:image" content="https://factorylicence.in/assets/factory-license-haryana-og.jpg" />
+        <meta property="og:site_name" content="FactoryLicence.in" />
+        <link rel="canonical" href="https://factorylicence.in/factory-licence-in-haryana" />
       </Helmet>
-
       {/* Hero Section */}
 
       <section className="relative text-white py-20   md:px-0 px-4 mt-20 overflow-hidden">

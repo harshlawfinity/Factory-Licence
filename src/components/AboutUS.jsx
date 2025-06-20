@@ -1,5 +1,5 @@
 import React, { lazy, Suspense } from 'react';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 
 const NewAbout = lazy(() => import('./NewAbout.jsx'));
 const WhyChooseUs = lazy(() => import('./WhyChooseUs.jsx'));
@@ -11,56 +11,16 @@ import AboutHero from './AboutHero.jsx'; // Load first for LCP
 const AboutUS = () => {
   return (
     <div>
-      <Helmet>
+         <Helmet>
         <title>About Lawfinity India Private Limited</title>
-        <meta
-          name="description"
-          content="Learn about Lawfinity India Private Limited, the team behind FactoryLicence.in. Trusted experts in factory licensing, compliance, and legal consultancy in India."
-        />
-        <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://factorylicence.in/about" />
-
-        {/* Open Graph */}
-        <meta property="og:title" content="About Us | Factory Licence" />
-        <meta
-          property="og:description"
-          content="We support Indian entrepreneurs by making factory compliance and setup easy. Learn who we are and why we’re trusted across India."
-        />
+        <meta name="description" content="Learn about Lawfinity India Private Limited, the team behind FactoryLicence.in. Trusted experts in factory licensing, compliance, and legal consultancy in India." />
+        <meta property="og:title" content="About Lawfinity India Private Limited" />
+        <meta property="og:description" content="Learn about Lawfinity India Private Limited, the team behind FactoryLicence.in. Trusted experts in factory licensing, compliance, and legal consultancy in India." />
         <meta property="og:url" content="https://factorylicence.in/about" />
         <meta property="og:type" content="website" />
-        <meta
-          property="og:image"
-          content="https://factorylicence.in/public/fav2.webp"
-        />
-
-        {/* Twitter */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="About Us | Factory Licence" />
-        <meta
-          name="twitter:description"
-          content="We support Indian entrepreneurs by making factory compliance and setup easy. Learn who we are and why we’re trusted across India."
-        />
-        <meta
-          name="twitter:image"
-          content="https://factorylicence.in/public/fav2.webp"
-        />
-
-        {/* Schema.org */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            name: "Factory Licence",
-            url: "https://factorylicence.in/",
-            logo: "https://factorylicence.in/public/fav2.webp",
-            description:
-              "Factory Licence is a leading consultancy helping businesses across India with factory licence registration, compliance, and regulatory guidance.",
-            sameAs: [
-              "https://www.facebook.com/factorylicence",
-              "https://www.instagram.com/factorylicence",
-            ],
-          })}
-        </script>
+        <meta property="og:image" content="https://factorylicence.in/assets/about-lawfinity-og.jpg" />
+        <meta property="og:site_name" content="FactoryLicence.in" />
+        <link rel="canonical" href="https://factorylicence.in/about" />
       </Helmet>
 
       {/* Load critical content first */}
